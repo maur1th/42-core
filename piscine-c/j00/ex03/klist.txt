@@ -1,0 +1,8 @@
+Credentials cache: API:15755
+        Principal: tmaurin@42.FR
+
+  Issued                Expires               Principal
+Sep  1 10:07:21 2015  Sep  1 20:07:21 2015  krbtgt/42.FR@42.FR
+Sep  1 10:07:30 2015  Sep  1 20:07:21 2015  nfs/zfs-student-1.42.fr@42.FR
+Sep  1 10:07:30 2015  Sep  1 20:07:21 2015  nfs/zfs-student-4.42.fr@42.FR
+Sep  1 10:29:25 2015  Sep  1 20:07:21 2015  host/vogsphere-frontend-normal-1.42.fr@42.FR
