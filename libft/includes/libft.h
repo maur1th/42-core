@@ -17,7 +17,7 @@
 # include <string.h>
 
 size_t			ft_strlen(const char *s);
-char			*ft_strdup(char *src);
+char			*ft_strdup(const char *src);
 char			*ft_strcpy(char *restrict dst, const char *restrict src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 int				ft_strcmp(const char *s1, const char *s2);
