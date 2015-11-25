@@ -37,9 +37,13 @@ int		main(void)
 	ft_putstr(strcmp(ft_strcpy(s2, s1), strcpy(s2, s1)) == 0
 		? "OK\n" : "KO\n");
 
-	// ft_strncpy
-	ft_putstr("ft_strncpy: ");
-	ft_putstr(strcmp(ft_strcpy(s2, s1), s2) == 0 ? "OK\n" : "KO\n");
+	// // ft_strncpy
+	// ft_putstr("ft_strncpy: ");
+	// ft_putstr(strcmp(ft_strcpy(s2, s1), s2) == 0 ? "OK\n" : "KO\n");
+
+	// ft_strcat
+	ft_putstr("ft_strcat: ");
+	ft_putstr(strcmp(ft_strcat(s1, "you"), "helloyou") == 0 ? "OK\n" : "KO\n");
 
 	// ft_putchar
 	ft_putstr("ft_putchar: ");

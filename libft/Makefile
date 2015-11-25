@@ -19,6 +19,7 @@ HEADERS 	= ./includes/
 SRC			= ./srcs/ft_strlen.c \
 			  ./srcs/ft_strdup.c \
 			  ./srcs/ft_strcpy.c \
+			  ./srcs/ft_strcat.c \
 			  ./srcs/ft_strcmp.c \
 			  ./srcs/ft_putchar.c \
 			  ./srcs/ft_putstr.c \
