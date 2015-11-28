@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tmaurin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/25 10:49:21 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 10:49:23 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/11/28 09:31:14 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/11/28 09:31:26 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 #include <fcntl.h>
 
 int		main(void)
@@ -29,21 +29,26 @@ int		main(void)
 	// ft_strdup
 	ft_putstr("ft_strdup: ");
 	s3 = ft_strdup(s2);
-	ft_putstr(strcmp(s2, s3) == 0 && s2 != s3 ? "OK\n" : "KO\n");
+	ft_putstr(ft_strcmp(s2, s3) == 0 && s2 != s3 ? "OK\n" : "KO\n");
 	free(s3);
 
 	// ft_strcpy
 	ft_putstr("ft_strcpy: ");
-	ft_putstr(strcmp(ft_strcpy(s2, s1), strcpy(s2, s1)) == 0
+	ft_putstr(ft_strcmp(ft_strcpy(s2, s1), strcpy(s2, s1)) == 0
 		? "OK\n" : "KO\n");
 
-	// // ft_strncpy
-	// ft_putstr("ft_strncpy: ");
-	// ft_putstr(strcmp(ft_strcpy(s2, s1), s2) == 0 ? "OK\n" : "KO\n");
+	// ft_strncpy
+	ft_putstr("ft_strncpy: ");
+	ft_putstr(ft_strcmp(ft_strcpy(s2, s1), s2) == 0 ? "OK\n" : "KO\n");
 
 	// ft_strcat
 	ft_putstr("ft_strcat: ");
-	ft_putstr(strcmp(ft_strcat(s1, "you"), "helloyou") == 0 ? "OK\n" : "KO\n");
+	ft_putstr(ft_strcmp(ft_strcat(s1, "you"), "helloyou") == 0 ? "OK\n" : "KO\n");
+
+	// ft_strncat
+	ft_putstr("ft_strncat: ");
+	ft_putstr(ft_strcmp(
+		ft_strncat(s1, "you", 1), "helloyouy") == 0 ? "OK\n" : "KO\n");
 
 	// ft_putchar
 	ft_putstr("ft_putchar: ");

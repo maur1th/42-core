@@ -21,6 +21,7 @@ char			*ft_strdup(const char *src);
 char			*ft_strcpy(char *restrict dst, const char *restrict src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 char			*ft_strcat(char *dest, const char *src);
+char			*ft_strncat(char *dest, const char *src, size_t nb);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_tolower(int c);
 
