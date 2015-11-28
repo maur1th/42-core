@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/25 15:43:52 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 15:43:53 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/09/25 15:44:00 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/09/25 15:44:02 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_putendl_fd(char const *s, int fd)
 {
 	while (*s != '\0')
-		ft_putchar(*(s++));
-	ft_putchar('\n');
+		ft_putchar_fd(*(s++), fd);
+	ft_putchar_fd('\n', fd);
 }

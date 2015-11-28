@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/08 22:09:11 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/08 22:09:13 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/09/25 11:14:58 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/09/25 11:15:00 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strncat(char *dest, const char *src, size_t nb)
+static void		ft_print(int nb)
 {
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(dest);
-	i = 0;
-	while (i < nb)
+	if (nb < 10)
 	{
-		dest[len + i] = src[i];
-		i += 1;
+		ft_putchar('0' + nb);
 	}
-	dest[len + i] = '\0';
-	return (dest);
+	else
+	{
+		ft_print(nb / 10);
+		ft_print(nb % 10);
+	}
+}
+
+void			ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	ft_print(nb);
 }

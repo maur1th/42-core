@@ -16,23 +16,23 @@ CC 			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 
 HEADERS 	= ./includes/
-SRC			= ./srcs/ft_strlen.c \
-			  ./srcs/ft_strdup.c \
-			  ./srcs/ft_strcpy.c \
-			  ./srcs/ft_strcat.c \
-			  ./srcs/ft_strncat.c \
-			  ./srcs/ft_strlcat.c \
-			  ./srcs/ft_strcmp.c \
-			  ./srcs/ft_putchar.c \
-			  ./srcs/ft_putstr.c \
-			  ./srcs/ft_putendl.c \
-			  ./srcs/ft_putnbr.c \
-			  ./srcs/ft_putchar_fd.c \
-			  ./srcs/ft_putstr_fd.c \
-			  ./srcs/ft_putnbr_fd.c \
-			  ./srcs/ft_putendl_fd.c
+SRC			= ./ft_strlen.c \
+			  ./ft_strdup.c \
+			  ./ft_strcpy.c \
+			  ./ft_strcat.c \
+			  ./ft_strncat.c \
+			  ./ft_strlcat.c \
+			  ./ft_strcmp.c \
+			  ./ft_putchar.c \
+			  ./ft_putstr.c \
+			  ./ft_putendl.c \
+			  ./ft_putnbr.c \
+			  ./ft_putchar_fd.c \
+			  ./ft_putstr_fd.c \
+			  ./ft_putnbr_fd.c \
+			  ./ft_putendl_fd.c
 OBJ			= $(SRC:.c=.o)
-MAIN		= ./srcs/main.o
+MAIN		= ./main.o
 
 all: $(NAME) $(TEST)
 
@@ -44,7 +44,7 @@ $(TEST): $(NAME) $(MAIN)
 	$(CC) -o $@ $(MAIN) -L . -lft
 
 %.o: %.c
-	$(CC) -o $@ -c -I $(HEADERS) $(CFLAGS) $<
+	$(CC) -o $@ -c $(CFLAGS) $<
 
 clean:
 	/bin/rm -f $(OBJ)

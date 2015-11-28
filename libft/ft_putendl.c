@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/25 10:56:48 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 10:56:52 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/09/25 15:43:52 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/09/25 15:43:53 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int		ft_tolower(int c)
+void	ft_putendl(char const *s)
 {
-	return ((c >= 'A' && c <= 'Z') ? c - 'A' + 'a' : c)
+	while (*s != '\0')
+		ft_putchar(*(s++));
+	ft_putchar('\n');
 }

@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/25 17:42:58 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 17:44:06 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/09/25 15:44:36 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/09/25 15:44:37 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_itoa(int n)
 {
-	char	*ptr;
+	char	*s;
 
-	ptr = (char*)malloc(sizeof(*ptr) * (ft_strlen(s) + 1));
-	ft_strcpy(ptr, s);
-	return (ptr);
+	s = (char*)malloc(sizeof(char));
+	return (n == 2147483648 ? "2147483648" : s);
 }
