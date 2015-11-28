@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 18:03:37 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 18:05:12 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/09/08 15:54:16 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/11/28 17:06:44 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		tolower(int c)
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return (c <= 'Z' && c >= 'A' ? c : c + 32);
+	unsigned int	i;
+
+	i = 0;
+	while (i + 1 < n && s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i += 1;
+	return (s1[i] - s2[i]);
 }

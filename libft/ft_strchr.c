@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 18:03:37 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 18:05:12 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/11/28 16:43:38 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/11/28 16:59:11 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		tolower(int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	return (c <= 'Z' && c >= 'A' ? c : c + 32);
+	while (*s != '\0')
+	{
+		if (*s == c)
+		{
+			return ((char*)s);
+		}
+		s += 1;
+	}
+	if (c == '\0')
+	{
+		return ((char*)s);
+	}
+	return (0);
 }
