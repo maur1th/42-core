@@ -47,8 +47,16 @@ int		main(void)
 
 	// ft_strncat
 	ft_putstr("ft_strncat: ");
-	ft_putstr(ft_strcmp(
-		ft_strncat(s1, "you", 1), "helloyouy") == 0 ? "OK\n" : "KO\n");
+	ft_putstr(ft_strcmp(ft_strncat(s1, "you", 1), "helloyouy") == 0 ?
+		"OK\n" : "KO\n");
+
+	// ft_strlcat
+	ft_putstr("ft_strlcat: ");
+	// duplicate s2
+	ft_strcpy(s3, s2);
+	ft_putstr(ft_strlcat(s2, "you", 8) == strlcat(s3, "you", 8) ?
+		"OK " : "KO ");
+	ft_putstr(ft_strcmp(s2, s3) == 0 ? "OK\n" : "KO\n");
 
 	// ft_putchar
 	ft_putstr("ft_putchar: ");

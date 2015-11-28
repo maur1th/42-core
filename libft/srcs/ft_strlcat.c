@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tmaurin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/25 16:04:22 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 16:04:23 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/11/28 10:19:09 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/11/28 10:19:12 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_strcpy(char *dst, const char *src)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
+	size_t	length;
 
-	i = 0;
-	while (src[i] != '\0')
+	length = ft_strlen(src) + ft_strlen(dst);
+	while (size != 0 && *dst != '\0')
 	{
-		dst[i] = src[i];
-		i += 1;
+		dst += 1;
+		size -= 1;
 	}
-	return (dst);
+
+	while (*src != '\0' && size != 1)
+	{
+		*(dst++) = *(src++);
+		size -= 1;
+	}
+
+	return length;
 }
