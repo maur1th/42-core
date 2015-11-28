@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 14:42:15 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 15:09:13 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/11/28 16:04:28 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/11/28 16:16:45 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *ptr;
+	char	tmp[len];
 
-	ptr = (char*)b;
-	while (len--)
-	{
-		*(ptr++) = c;
-	}
-
-	return (b);
+	ft_memcpy(tmp, src, len);
+	ft_memcpy(dst, tmp, len);
+	return (dst);
 }

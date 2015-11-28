@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 16:04:22 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 16:04:23 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/11/28 15:14:37 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int		i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i += 1;
-	}
+	while (*src != '\0')
+		*(dst++) = *(src++);
+	*dst = *src;
 	return (dst);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 09:31:14 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 09:31:26 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/11/28 15:51:29 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ int		main(void)
 	char	s1[100] = "hello";
 	char	s2[100] = "you";
 	char	*s3;
+
+	// ft_memset
+	ft_putstr("ft_memset: ");
+	s3 = (char*)malloc(sizeof(char) * 10);
+	ft_putstr(ft_strcmp(ft_memset(s3, 'b', 5), memset(s3, 'b', 5)) == 0 ?
+		"OK\n" : "KO\n");
+	free(s3);
 
 	// ft_strlen
 	ft_putstr("ft_strlen: ");

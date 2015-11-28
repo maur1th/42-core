@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 10:19:09 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 10:19:12 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/11/28 16:07:44 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst += 1;
 		size -= 1;
 	}
-
 	while (*src != '\0' && size != 1)
 	{
 		*(dst++) = *(src++);
 		size -= 1;
 	}
-
-	return length;
+	return (length);
 }
