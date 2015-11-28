@@ -6,7 +6,7 @@
 #    By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/11/28 18:03:45 by tmaurin          ###   ########.fr        #
+#    Updated: 2015/11/28 18:09:31 by tmaurin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC			= ./ft_memset.c \
 			  ./ft_strlen.c \
 			  ./ft_strdup.c \
 			  ./ft_strcpy.c \
+			  ./ft_strncpy.c \
 			  ./ft_strcat.c \
 			  ./ft_strncat.c \
 			  ./ft_strlcat.c \

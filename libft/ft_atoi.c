@@ -6,51 +6,37 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 17:22:40 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 17:22:45 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/11/28 18:26:05 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(const char *str)
-{
-	int		i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+static int	ft_isspace(char c)
+{
+	if (c <= 32)
+		return (1);
+	return (0);
 }
 
-long	ft_get_multiplier(const char *str)
+int			ft_atoi(const char *str)
 {
 	long	result;
-	int		i;
-
-	i = 0;
-	result = 1;
-	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
-	{
-		result *= 10;
-		i += 1;
-	}
-	return (result / 10);
-}
-
-int		ft_atoi(const char *str)
-{
-	int		result;
 	int		sign;
 
-	result = 0;
 	sign = 1;
-	while (!(*str >= '0' && *str <= '9') && *str != '\0' && sign != -1)
+	result = 0;
+	if (ft_strlen(str) == 0 || (*str < 32 && !ft_isspace(*str)))
+		return (0);
+	while (*str >= 0 && *str <= 32)
+		str++;
+	if ((*str == '-' || *str == '+'))
 	{
-		if (*(str++) == '-')
-			sign *= -1;
-	}
-	while ((*str != '\0') && (*str >= '0' && *str <= '9'))
-	{
-		result += (*str - '0') * ft_get_multiplier(str);
+		if (*str == '-')
+			sign = -1;
 		str++;
 	}
-	return (result * sign);
+	while (*str >= '0' && *str <= '9')
+		result = (result + *str++ - '0') * 10;
+	return (result / 10 * sign);
 }

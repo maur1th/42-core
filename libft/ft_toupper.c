@@ -6,11 +6,11 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 18:01:36 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 18:04:59 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/11/28 18:11:55 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		toupper(int c)
+int		ft_toupper(int c)
 {
-	return (c <= 'z' && c >= 'a' ? c : c - 32);
+	return (c <= 'z' && c >= 'a' ? c - 32 : c);
 }
