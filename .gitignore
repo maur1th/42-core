@@ -28,6 +28,7 @@
 *.x86_64
 *.hex
 test
+pretty_test
 
 # Debug files
 *.dSYM/
