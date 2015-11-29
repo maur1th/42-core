@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+         #
+#    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/11/28 18:09:31 by tmaurin          ###   ########.fr        #
+#    Updated: 2015/11/29 23:40:29 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,11 @@ SRC			= ./ft_memset.c \
 			  ./ft_isprint.c \
 			  ./ft_toupper.c \
 			  ./ft_tolower.c \
+			  ./ft_memalloc.c \
+			  ./ft_memdel.c \
+			  ./ft_strnew.c \
+			  ./ft_strdel.c \
+			  ./ft_strclr.c \
 			  ./ft_putchar.c \
 			  ./ft_putstr.c \
 			  ./ft_putendl.c \
