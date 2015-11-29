@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/11/29 23:40:29 by tm               ###   ########.fr        #
+#    Updated: 2015/11/30 00:38:48 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,12 @@ SRC			= ./ft_memset.c \
 			  ./ft_strnew.c \
 			  ./ft_strdel.c \
 			  ./ft_strclr.c \
+			  ./ft_striter.c \
+			  ./ft_striteri.c \
+			  ./ft_strmap.c \
+			  ./ft_strmapi.c \
+			  ./ft_strequ.c \
+			  ./ft_strnequ.c \
 			  ./ft_putchar.c \
 			  ./ft_putstr.c \
 			  ./ft_putendl.c \
