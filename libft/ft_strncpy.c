@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/08 12:32:13 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/08 13:45:55 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/11/30 22:02:17 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include "libft.h"
+
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	unsigned int		i;
 
 	i = 0;
 	while (i < n && src[i] != '\0')
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i += 1;
 	}
 	if (i < n)
 	{
 		while (i < n)
 		{
-			dest[i] = '\0';
+			dst[i] = '\0';
 			i += 1;
 		}
-		dest[i] = '\0';
+		dst[i] = '\0';
 	}
-	return (dest);
+	return (dst);
 }
