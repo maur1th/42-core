@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/11/30 21:16:19 by tm               ###   ########.fr        #
+#    Updated: 2015/11/30 23:42:18 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,13 @@ SRC			= ./ft_memset.c \
 			  ./ft_putchar_fd.c \
 			  ./ft_putstr_fd.c \
 			  ./ft_putnbr_fd.c \
-			  ./ft_putendl_fd.c
+			  ./ft_putendl_fd.c \
+			  ./ft_lstnew.c \
+			  ./ft_lstdelone.c \
+			  ./ft_lstdel.c \
+			  ./ft_lstadd.c \
+			  ./ft_lstiter.c \
+			  ./ft_lstmap.c
 OBJ			= $(SRC:.c=.o)
 MAIN		= ./main.o
 
