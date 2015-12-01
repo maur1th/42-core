@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/01 20:24:13 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 21:07:33 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef struct			s_list
+typedef struct	s_list
 {
-	void				*content;
-	size_t				content_size;
-	struct s_list		*next;
-}						t_list;
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
