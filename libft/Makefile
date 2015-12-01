@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
+#    By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/11/30 23:42:18 by tm               ###   ########.fr        #
+#    Updated: 2015/12/01 21:15:49 by tmaurin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,8 @@ SRC			= ./ft_memset.c \
 			  ./ft_lstdel.c \
 			  ./ft_lstadd.c \
 			  ./ft_lstiter.c \
-			  ./ft_lstmap.c
+			  ./ft_lstmap.c \
+			  ./ft_itoa_base.c
 OBJ			= $(SRC:.c=.o)
 MAIN		= ./main.o
 
