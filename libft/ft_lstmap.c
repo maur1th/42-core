@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 23:41:22 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:11 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:32:38 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		new->next = ft_lstmap(lst->next, f);
 	}
-	return new;
+	return (new);
 }

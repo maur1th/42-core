@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 23:28:50 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:24:01 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:29:36 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnew(size_t size)
 	s = (char*)ft_memalloc(size);
 	if (!s)
 	{
-		return NULL;
+		return (NULL);
 	}
 	ft_memset(s, '\0', size);
 	return (s);

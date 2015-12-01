@@ -6,13 +6,13 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 23:39:01 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:10 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:32:51 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	f(lst);
 	if (lst->next)

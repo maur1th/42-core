@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 23:39:47 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:35 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:31:13 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_strclr(char *s)
 {
-	ft_memset((void*)s,'\0', ft_strlen(s));
+	ft_memset((void*)s, '\0', ft_strlen(s));
 }

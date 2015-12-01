@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:47:53 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:24:08 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:29:08 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	trimmed_len(char const *s)
 	j = 0;
 	while (*s)
 	{
-		if(is_whitespace(*(s++)))
+		if (is_whitespace(*(s++)))
 		{
 			j += 1;
 		}
@@ -46,7 +46,7 @@ char			*ft_strtrim(char const *s)
 	dst = (char*)malloc(sizeof(char) * ft_strlen(s));
 	if (!dst)
 	{
-		return NULL;
+		return (NULL);
 	}
 	while (is_whitespace(*s))
 	{

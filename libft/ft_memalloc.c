@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 23:20:34 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:13 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:31:35 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memalloc(size_t size)
 	ptr = (void*)malloc(sizeof(char) * size);
 	if (!ptr)
 	{
-		return NULL;
+		return (NULL);
 	}
 	ft_bzero(ptr, size);
 	return (ptr);

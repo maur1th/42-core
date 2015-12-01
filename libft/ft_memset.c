@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 14:42:15 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/11/28 15:09:13 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:31:25 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	{
 		*(ptr++) = c;
 	}
-
 	return (b);
 }

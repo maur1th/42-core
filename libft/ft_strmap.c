@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:08:12 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:52 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:30:37 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	{
 		*(dst++) = f(*(s++));
 	}
-	return(orig);
+	return (orig);
 }

@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:49:23 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:24:05 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:28:31 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char		*get_word(const char *s, char c)
 	return (buf);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		i;

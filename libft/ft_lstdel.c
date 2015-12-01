@@ -6,13 +6,13 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 23:29:12 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:09 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 20:33:01 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*next;
 
