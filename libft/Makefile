@@ -6,12 +6,11 @@
 #    By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/01 21:15:49 by tmaurin          ###   ########.fr        #
+#    Updated: 2015/12/01 21:37:47 by tmaurin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= libft.a
-TEST		= test
 CC 			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 
@@ -76,7 +75,6 @@ SRC			= ./ft_memset.c \
 			  ./ft_lstmap.c \
 			  ./ft_itoa_base.c
 OBJ			= $(SRC:.c=.o)
-MAIN		= ./main.o
 
 all: $(NAME)
 
@@ -84,21 +82,13 @@ $(NAME): $(OBJ)
 	ar rc $@ $^
 	ranlib $@
 
-$(TEST): $(NAME) $(MAIN)
-	$(CC) -o $@ $(MAIN) -L . -lft
-
 %.o: %.c
 	$(CC) -o $@ -c $(CFLAGS) $<
 
-pretty_test:
-	$(CC) -o $@ $(CFLAGS) $@.c $(SRC)
-
 clean:
 	/bin/rm -f $(OBJ)
-	/bin/rm -f $(MAIN)
 
 fclean: clean
 	/bin/rm -f $(NAME)
-	/bin/rm -f $(TEST)
 
 re: fclean all

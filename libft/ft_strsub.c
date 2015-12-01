@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:42:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:29:25 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 22:55:21 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	}
 	ft_strncpy(dst, s + start, len);
+	dst[len] = '\0';
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 10:19:09 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:49 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 22:56:39 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	{
 		*(dst++) = *(src++);
 		size -= 1;
+	}
+	if (!*src)
+	{
+		*dst = '\0';
 	}
 	return (length);
 }

@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 21:09:24 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/01 21:17:22 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/01 21:43:56 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ char			*ft_itoa_base(int value, int base)
 	value = value < 0 ? -value : value;
 	len = intlen(value, base) + sign;
 	s = (char*)malloc(sizeof(char) * (len + 1));
+	if (!s)
+	{
+		return (NULL);
+	}
 	if (sign)
 		s[0] = '-';
 	convert(value, base, s, &sign);
