@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/04 20:24:01 by tm               ###   ########.fr       */
+/*   Created: 2015/09/07 17:06:28 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/12/04 20:23:29 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int main()
+size_t		ft_sqrt(size_t nb)
 {
-	char	*matrix;
+	size_t		i;
 
-	matrix = ft_newmatrix(6);
-	ft_putmatrix(matrix);
-	return (0);
+	i = 0;
+	while (i * i < nb)
+		i += 1;
+	if (i * i == nb)
+		return (i);
+	else
+		return (0);
 }
