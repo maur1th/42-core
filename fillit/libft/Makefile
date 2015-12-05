@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
+#    By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/04 20:21:29 by tm               ###   ########.fr        #
+#    Updated: 2015/12/05 10:15:11 by tmaurin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,8 +75,8 @@ SRC			= ./ft_memset.c \
 			  ./ft_lstmap.c \
 			  ./ft_itoa_base.c \
 			  ./ft_sqrt.c \
-			  ./ft_newmatrix.c \
-			  ./ft_putmatrix.c
+			  ./ft_newm.c \
+			  ./ft_putm.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)

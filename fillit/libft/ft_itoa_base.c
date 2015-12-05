@@ -6,11 +6,11 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 21:09:24 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/01 21:43:56 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 10:32:15 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 static void		convert(int value, int base, char *s, short *i)
 {

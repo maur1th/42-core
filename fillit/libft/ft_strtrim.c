@@ -6,10 +6,11 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:47:53 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 22:52:55 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 10:35:49 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 static	int		is_whitespace(const char c)

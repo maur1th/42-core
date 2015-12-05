@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/04 20:22:49 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/05 10:37:29 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
-# include <stdlib.h>
 # include <string.h>
 
 typedef struct	s_list
@@ -88,7 +86,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_itoa_base(int value, int base);
 size_t			ft_sqrt(size_t nb);
 
-char			*ft_newmatrix(int size);
-void			ft_putmatrix(char *matrix);
+char			*ft_newm(int size);
+void			ft_putm(char *matrix);
 
 #endif

@@ -6,10 +6,11 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 23:08:19 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:13 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 10:33:10 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)

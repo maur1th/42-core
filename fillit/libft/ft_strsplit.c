@@ -6,11 +6,11 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:49:23 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 22:55:47 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 10:35:20 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 static int		count_words(const char *s, char c)
 {

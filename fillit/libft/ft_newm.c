@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_newm.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/25 11:14:58 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/05 10:31:34 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/12/04 20:06:44 by tm                #+#    #+#             */
+/*   Updated: 2015/12/05 10:34:10 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-static void		print_each(int nb)
+char	*ft_newmatrix(int size)
 {
-	if (nb < 10)
-	{
-		ft_putchar('0' + nb);
-	}
-	else
-	{
-		print_each(nb / 10);
-		print_each(nb % 10);
-	}
-}
+	char	*matrix;
 
-void			ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	print_each(nb);
+	matrix = (char*)malloc(sizeof(char) * (size * size + 1));
+	ft_memset(matrix, '0', size * size);
+	matrix[size * size] = '\0';
+	return (matrix);
 }

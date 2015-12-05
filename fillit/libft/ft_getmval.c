@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newmatrix.c                                     :+:      :+:    :+:   */
+/*   ft_getmval.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 20:06:44 by tm                #+#    #+#             */
-/*   Updated: 2015/12/04 20:19:44 by tm               ###   ########.fr       */
+/*   Created: 2015/12/05 10:09:50 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/12/05 10:11:06 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_newmatrix(int size)
+char	ft_getmval(char *matrix, size_t row, size_t col)
 {
-	char	*matrix;
-
-	matrix = (char*)malloc(sizeof(char) * (size * size + 1));
-	ft_memset(matrix, '0', size * size);
-	matrix[size * size] = '\0';
-	return (matrix);
+	return (matrix[row + col*width]);
 }
