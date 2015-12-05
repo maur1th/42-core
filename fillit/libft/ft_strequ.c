@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:36:14 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:44 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 13:05:33 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	return (ft_strcmp(s1, s2) == 0 ? 1 : 0);
+	return (ft_strcmp(s1, s2) == 0);
 }

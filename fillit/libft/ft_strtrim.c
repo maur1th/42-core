@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:47:53 by tm                #+#    #+#             */
-/*   Updated: 2015/12/05 10:35:49 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 13:05:31 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static	int		is_whitespace(const char c)
 {
-	return (c == ' ' || c == '\n' || c == '\t' ? 1 : 0);
+	return (c == ' ' || c == '\n' || c == '\t');
 }
 
 static size_t	trimmed_len(char const *s)
