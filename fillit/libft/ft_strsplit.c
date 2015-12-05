@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:49:23 by tm                #+#    #+#             */
-/*   Updated: 2015/12/05 10:35:20 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 16:06:35 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,8 @@ static char		*get_word(const char *s, char c)
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
 		i += 1;
-	buf = (char *)malloc(sizeof(*buf) * i + 1);
-	if (!buf)
-	{
+	if (!(buf = (char *)malloc(sizeof(*buf) * i + 1)))
 		return (NULL);
-	}
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
 	{
@@ -58,11 +55,8 @@ char			**ft_strsplit(char const *s, char c)
 	char	**tab;
 	int		i;
 
-	tab = (char **)malloc(sizeof(char*) * (count_words(s, c) + 1));
-	if (!tab)
-	{
+	if (!(tab = (char **)malloc(sizeof(char*) * (count_words(s, c) + 1))))
 		return (NULL);
-	}
 	i = 0;
 	if (*s && *s != c)
 		tab[i++] = get_word(s++, c);

@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 23:08:19 by tm                #+#    #+#             */
-/*   Updated: 2015/12/05 10:33:10 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 15:56:50 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	t_list	*node;
 	void	*content_buf;
 
-	node = (t_list*)malloc(sizeof(t_list));
+	if (!(node = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
 	content_buf = 0;
 	if (content)
 	{
-		content_buf = (void*)malloc(content_size);
+		if (!(content_buf = (void*)malloc(content_size)))
+			return (NULL);
 	}
 	if (node)
 	{
