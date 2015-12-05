@@ -6,14 +6,14 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 15:25:00 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 15:25:01 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 12:53:43 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s != '\0')
-		ft_putchar_fd(*(s++), fd);
+	write(fd, s, ft_strlen(s));
 }
