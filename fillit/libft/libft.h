@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/05 10:37:29 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 16:33:33 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_matrix
+{
+	char			*content;
+	size_t			size;
+}				t_matrix;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -86,7 +92,9 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_itoa_base(int value, int base);
 size_t			ft_sqrt(size_t nb);
 
-char			*ft_newm(int size);
-void			ft_putm(char *matrix);
+char			*ft_newm(size_t size);
+void			ft_putm(char *matrix, size_t size);
+char			ft_getmval(char *matrix, size_t size, size_t row, size_t col);
+void			ft_setmval(char *matrix, size_t size, size_t *coord, char value);
 
 #endif

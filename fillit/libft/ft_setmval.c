@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putm.c                                          :+:      :+:    :+:   */
+/*   ft_setmval.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 20:12:55 by tm                #+#    #+#             */
-/*   Updated: 2015/12/05 10:54:42 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/12/05 10:48:12 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/12/05 16:29:27 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putm(char *matrix, size_t size)
+void	ft_setmval(char *matrix, size_t size, size_t *coord, char value)
 {
-	char	*m0;
-
-	m0 = matrix;
-	while (*matrix != '\0')
-	{
-		ft_putchar(*(matrix++));
-		if ((matrix - m0) % size == 0)
-		{
-			ft_putchar('\n');
-		}
-		else
-		{
-			ft_putchar(' ');
-		}
-	}
+	matrix[coord[0] + coord[1] * size] = value;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/04 20:24:01 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/05 16:31:58 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 int main()
 {
-	char	*matrix;
+	t_matrix	*matrix;
+	size_t	size;
 
-	matrix = ft_newmatrix(6);
-	ft_putmatrix(matrix);
+	size = 6;
+	matrix = ft_newm(size);
+	ft_setmval(matrix, size, coord, '2');
+	ft_putm(matrix, size);
 	return (0);
 }
