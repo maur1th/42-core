@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 17:22:40 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/01 21:25:27 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 16:19:08 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			ft_atoi(const char *str)
 	{
 		if (*str == '-')
 			sign = -1;
-		str++;
+		str += 1;
 	}
 	while (*str >= '0' && *str <= '9')
 		result = (result + *(str++) - '0') * 10;
