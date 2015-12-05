@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 15:57:56 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/09/25 15:57:57 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 12:26:29 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t		ft_strlen(const char *s)
 {
-	size_t	i;
+	const char	*s0;
 
-	i = 0;
-	while (*(s++) != '\0')
-		i += 1;
-	return (i);
+	s0 = s;
+	while (*s != '\0')
+		s += 1;
+	return (s - s0);
 }
