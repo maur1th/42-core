@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 17:44:16 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 17:45:00 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/11 18:39:47 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	ft_mtxget(t_mtx *mtx, size_t row, size_t col)
 {
-	return (mtx->data[row + col * mtx->size]);
+	return (mtx->data[row + col * mtx->width]);
 }

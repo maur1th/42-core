@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 17:48:53 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/11 18:41:14 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ int main()
 {
 	t_mtx	*m1;
 	t_mtx	*m2;
-	size_t	size;
 
-	size = 6;
-	m1 = ft_mtxnew(size);
-	m2 = ft_mtxnew(size);
+	m1 = ft_mtxnew(6, 6);
+	m2 = ft_mtxnew(6, 6);
 	ft_mtxset(m1, 4, 2, '1');
 	ft_mtxset(m2, 2, 1, '1');
 	ft_mtxadd(m1, m2);

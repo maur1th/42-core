@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/11 17:43:41 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/11 18:38:56 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ typedef struct	s_list
 typedef struct	s_mtx
 {
 	char			*data;
-	size_t			size;
+	size_t			height;
+	size_t			width;
 }				t_mtx;
 
 void			*ft_memset(void *b, int c, size_t len);
@@ -91,7 +92,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_itoa_base(int value, int base);
 size_t			ft_sqrt(size_t nb);
 
-t_mtx			*ft_mtxnew(size_t size);
+t_mtx			*ft_mtxnew(size_t height, size_t width);
 char			ft_mtxget(t_mtx *mtx, size_t row, size_t col);
 t_mtx			*ft_mtxset(t_mtx *mtx, size_t row, size_t col,
 					char value);
