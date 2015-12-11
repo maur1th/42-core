@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/11 17:38:18 by tm               ###   ########.fr        #
+#    Updated: 2015/12/11 19:17:13 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,8 @@ SRC			= ./ft_memset.c \
 			  ./ft_mtxnew.c \
 			  ./ft_mtxget.c \
 			  ./ft_mtxset.c \
-			  ./ft_mtxadd.c
+			  ./ft_mtxadd.c \
+			  ./ft_mtxpad.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)

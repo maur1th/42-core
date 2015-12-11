@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/11 18:38:56 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/11 19:19:00 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ char			ft_mtxget(t_mtx *mtx, size_t row, size_t col);
 t_mtx			*ft_mtxset(t_mtx *mtx, size_t row, size_t col,
 					char value);
 t_mtx			*ft_mtxadd(t_mtx *m1, t_mtx *m2);
+t_mtx			*ft_mtxpad(t_mtx *src, size_t height, size_t width);
 void			ft_putmtx(t_mtx *mtx);
 
 #endif
