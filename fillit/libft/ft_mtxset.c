@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_addmatrices.c                                   :+:      :+:    :+:   */
+/*   ft_mtxset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 15:34:40 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 15:54:35 by tm               ###   ########.fr       */
+/*   Created: 2015/12/11 17:45:26 by tm                #+#    #+#             */
+/*   Updated: 2015/12/11 17:45:49 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_matrix	*ft_addmatrices(t_matrix *m1, t_matrix *m2)
+t_mtx	*ft_mtxset(t_mtx *mtx, size_t row, size_t col, char value)
 {
-	char	*s1;
-	char	*s2;
+	char	*data;
 
-	if (m1->size != m2->size)
-		return (NULL);
-	s1 = m1->data;
-	s2 = m2->data;
-	while (*s1 != '\0')
-		*(s1++) += *(s2++) - '0';
-	return (m1);
+	if (row * col > mtx->size * mtx->size)
+		return NULL;
+	data = mtx->data;
+	data[row + col * mtx->size] = value;
+	return mtx;
 }

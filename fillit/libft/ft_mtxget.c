@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newmatrix.c                                     :+:      :+:    :+:   */
+/*   ft_mtxget.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 20:06:44 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 15:41:59 by tm               ###   ########.fr       */
+/*   Created: 2015/12/11 17:44:16 by tm                #+#    #+#             */
+/*   Updated: 2015/12/11 17:45:00 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-t_matrix	*ft_newmatrix(size_t size)
+char	ft_mtxget(t_mtx *mtx, size_t row, size_t col)
 {
-	t_matrix	*matrix;
-
-	if(!(matrix = (t_matrix*)malloc(sizeof(t_matrix))))
-		return (NULL);
-	if (!(matrix->data = (char*)malloc(sizeof(char) * (size * size + 1))))
-		return (NULL);
-	ft_memset(matrix->data, '0', size * size);
-	matrix->data[size * size] = '\0';
-	matrix->size = size;
-	return (matrix);
+	return (mtx->data[row + col * mtx->size]);
 }

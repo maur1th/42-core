@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getmatval.c                                     :+:      :+:    :+:   */
+/*   ft_mtxadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/05 10:09:50 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/11 12:46:52 by tm               ###   ########.fr       */
+/*   Created: 2015/12/11 17:36:41 by tm                #+#    #+#             */
+/*   Updated: 2015/12/11 17:47:19 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_getmatval(t_matrix *matrix, size_t row, size_t col)
+t_mtx	*ft_mtxadd(t_mtx *m1, t_mtx *m2)
 {
-	return (matrix->data[row + col * matrix->size]);
+	char	*s1;
+	char	*s2;
+
+	if (m1->size != m2->size)
+		return (NULL);
+	s1 = m1->data;
+	s2 = m2->data;
+	while (*s1 != '\0')
+		*(s1++) += *(s2++) - '0';
+	return (m1);
 }

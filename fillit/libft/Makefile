@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/11 15:51:46 by tm               ###   ########.fr        #
+#    Updated: 2015/12/11 17:38:18 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,11 +75,11 @@ SRC			= ./ft_memset.c \
 			  ./ft_lstmap.c \
 			  ./ft_itoa_base.c \
 			  ./ft_sqrt.c \
-			  ./ft_newmatrix.c \
-			  ./ft_putmatrix.c \
-			  ./ft_getmatval.c \
-			  ./ft_setmatval.c \
-			  ./ft_addmatrices.c
+			  ./ft_putmtx.c \
+			  ./ft_mtxnew.c \
+			  ./ft_mtxget.c \
+			  ./ft_mtxset.c \
+			  ./ft_mtxadd.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)
