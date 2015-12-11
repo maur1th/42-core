@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putmatrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 15:16:17 by tm               ###   ########.fr       */
+/*   Created: 2015/12/04 20:12:55 by tm                #+#    #+#             */
+/*   Updated: 2015/12/11 12:45:14 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int main()
+void	ft_putmatrix(t_matrix *matrix)
 {
-	t_matrix	*matrix;
-	size_t	size;
+	char	*d0;
+	char	*data;
 
-	size = 6;
-	matrix = ft_newmatrix(size);
-	ft_setmatval(matrix, 4, 2, '2');
-	ft_putmatrix(matrix);
-	return (0);
+	d0 = matrix->data;
+	data = d0;
+	while (*data != '\0')
+	{
+		ft_putchar(*(data++));
+		if ((data - d0) % matrix->size == 0)
+		{
+			ft_putchar('\n');
+		}
+		else
+		{
+			ft_putchar(' ');
+		}
+	}
 }

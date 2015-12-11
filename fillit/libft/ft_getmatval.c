@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putm.c                                          :+:      :+:    :+:   */
+/*   ft_getmatval.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 20:12:55 by tm                #+#    #+#             */
-/*   Updated: 2015/12/05 10:54:42 by tmaurin          ###   ########.fr       */
+/*   Created: 2015/12/05 10:09:50 by tmaurin           #+#    #+#             */
+/*   Updated: 2015/12/11 12:46:52 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putm(char *matrix, size_t size)
+char	ft_getmatval(t_matrix *matrix, size_t row, size_t col)
 {
-	char	*m0;
-
-	m0 = matrix;
-	while (*matrix != '\0')
-	{
-		ft_putchar(*(matrix++));
-		if ((matrix - m0) % size == 0)
-		{
-			ft_putchar('\n');
-		}
-		else
-		{
-			ft_putchar(' ');
-		}
-	}
+	return (matrix->data[row + col * matrix->size]);
 }

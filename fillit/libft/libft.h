@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/05 16:33:33 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/11 12:52:47 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	s_list
 
 typedef struct	s_matrix
 {
-	char			*content;
+	char			*data;
 	size_t			size;
 }				t_matrix;
 
@@ -92,9 +92,9 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_itoa_base(int value, int base);
 size_t			ft_sqrt(size_t nb);
 
-char			*ft_newm(size_t size);
-void			ft_putm(char *matrix, size_t size);
-char			ft_getmval(char *matrix, size_t size, size_t row, size_t col);
-void			ft_setmval(char *matrix, size_t size, size_t *coord, char value);
+t_matrix		*ft_newmatrix(size_t size);
+void			ft_putmatrix(t_matrix *matrix);
+char			ft_getmatval(t_matrix *matrix, size_t row, size_t col);
+t_matrix		*ft_setmatval(t_matrix *matrix, size_t row, size_t col, char value);
 
 #endif

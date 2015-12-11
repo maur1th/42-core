@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newm.c                                          :+:      :+:    :+:   */
+/*   ft_newmatrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 20:06:44 by tm                #+#    #+#             */
-/*   Updated: 2015/12/05 16:32:20 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/11 12:49:37 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_newm(size_t size)
+t_matrix	*ft_newmatrix(size_t size)
 {
 	t_matrix	*matrix;
 
-	if (!(matrix = (char*)malloc(sizeof(char) * (size * size + 1))))
+	if(!(matrix = (t_matrix*)malloc(sizeof(matrix))))
 		return (NULL);
-	ft_memset(matrix, '0', size * size);
-	matrix[size * size] = '\0';
+	if (!(matrix->data = (char*)malloc(sizeof(char) * (size * size + 1))))
+		return (NULL);
+	ft_memset(matrix->data, '0', size * size);
+	matrix->data[size * size] = '\0';
+	matrix->size = size;
 	return (matrix);
 }
