@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/11 12:52:47 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/11 15:51:30 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*ft_strcat(char *dest, const char *src);
 char			*ft_strncat(char *dest, const char *src, size_t nb);
-size_t			ft_strlcat(char *dst, const char *src,
-					size_t size);
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
@@ -95,6 +94,8 @@ size_t			ft_sqrt(size_t nb);
 t_matrix		*ft_newmatrix(size_t size);
 void			ft_putmatrix(t_matrix *matrix);
 char			ft_getmatval(t_matrix *matrix, size_t row, size_t col);
-t_matrix		*ft_setmatval(t_matrix *matrix, size_t row, size_t col, char value);
+t_matrix		*ft_setmatval(t_matrix *matrix, size_t row, size_t col,
+					char value);
+t_matrix		*ft_addmatrices(t_matrix *m1, t_matrix *m2);
 
 #endif
