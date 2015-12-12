@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/11 19:28:53 by tm               ###   ########.fr        #
+#    Updated: 2015/12/12 16:31:58 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ CC 			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 
 HEADERS 	= ./includes/
-SRC			= ./srcs/main.c
+SRC			= ./srcs/main.c \
+			  ./srcs/strdoublesplit.c \
+			  ./srcs/matrixshift.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)
