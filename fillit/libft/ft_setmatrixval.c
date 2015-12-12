@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxadd.c                                        :+:      :+:    :+:   */
+/*   ft_setmatrixval.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 17:36:41 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 18:40:49 by tm               ###   ########.fr       */
+/*   Created: 2015/12/05 00:41:22 by tm                #+#    #+#             */
+/*   Updated: 2015/12/05 00:44:36 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_mtx	*ft_mtxadd(t_mtx *m1, t_mtx *m2)
+void	ft_setmatrixval(char *matrix, int row, int col, char val)
 {
-	char	*s1;
-	char	*s2;
+	size_t	size;
 
-	if (m1->height != m2->height || m1->width != m2->width)
-		return (NULL);
-	s1 = m1->data;
-	s2 = m2->data;
-	while (*s1 != '\0')
-		*(s1++) += *(s2++) - '0';
-	return (m1);
+	size = ft_sqrt(ft_strlen(matrix));
+	matrix[row + col * size] = val;
 }

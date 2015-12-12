@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxset.c                                        :+:      :+:    :+:   */
+/*   ft_mtxnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 17:45:26 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 18:56:12 by tm               ###   ########.fr       */
+/*   Created: 2015/12/04 20:06:44 by tm                #+#    #+#             */
+/*   Updated: 2015/12/12 12:09:46 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-t_mtx	*ft_mtxset(t_mtx *mtx, size_t row, size_t col, char value)
+t_matrix	*ft_matrixnew(size_t height, size_t width)
 {
-	char	*data;
+	t_matrix	*matrix;
 
-	if (row * col > (mtx->height - 1) * (mtx->width - 1))
-		return NULL;
-	data = mtx->data;
-	data[col + row * mtx->width] = value;
-	return mtx;
+	if(!(matrix = (t_matrix*)malloc(sizeof(t_matrix))))
+		return (NULL);
+	if (!(matrix->data = (char*)malloc(sizeof(char) * (height * width + 1))))
+		return (NULL);
+	ft_memset(matrix->data, '0', height * width);
+	matrix->data[height * width] = '\0';
+	matrix->height = height;
+	matrix->width = width;
+	return (matrix);
 }

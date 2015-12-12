@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxnew.c                                        :+:      :+:    :+:   */
+/*   ft_mtxpad.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 20:06:44 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 18:37:33 by tm               ###   ########.fr       */
+/*   Created: 2015/12/11 19:01:59 by tm                #+#    #+#             */
+/*   Updated: 2015/12/12 12:09:43 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-t_mtx	*ft_mtxnew(size_t height, size_t width)
+t_matrix	*ft_matrixpad(t_matrix *src, size_t height, size_t width)
 {
-	t_mtx	*mtx;
+	t_matrix	*dst;
+	size_t	row;
+	size_t	col;
 
-	if(!(mtx = (t_mtx*)malloc(sizeof(t_mtx))))
+
+	if (src->height > height || src->width > width)
 		return (NULL);
-	if (!(mtx->data = (char*)malloc(sizeof(char) * (height * width + 1))))
+	if (!(dst = ft_matrixnew(height, width)))
 		return (NULL);
-	ft_memset(mtx->data, '0', height * width);
-	mtx->data[height * width] = '\0';
-	mtx->height = height;
-	mtx->width = width;
-	return (mtx);
+	row = 0;
+	col = 0;
+	while (src->data[row * src->width + col] != '\0')
+	{
+		if (src->data[row * src->width + col] == '1')
+			ft_matrixset(dst, row, col, '1');
+		if (++col == src->width)
+		{
+			col = 0;
+			row += 1;
+		}
+	}
+	return (dst);
 }

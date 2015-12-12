@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putmtx.c                                        :+:      :+:    :+:   */
+/*   ft_mtxset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 20:12:55 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 18:38:30 by tm               ###   ########.fr       */
+/*   Created: 2015/12/11 17:45:26 by tm                #+#    #+#             */
+/*   Updated: 2015/12/12 12:09:41 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putmtx(t_mtx *mtx)
+t_matrix	*ft_matrixset(t_matrix *matrix, size_t row, size_t col, char value)
 {
-	char	*d0;
 	char	*data;
 
-	d0 = mtx->data;
-	data = d0;
-	while (*data != '\0')
-	{
-		ft_putchar(*(data++));
-		if ((data - d0) % mtx->width == 0)
-		{
-			ft_putchar('\n');
-		}
-		else
-		{
-			ft_putchar(' ');
-		}
-	}
+	if (row * col > (matrix->height - 1) * (matrix->width - 1))
+		return NULL;
+	data = matrix->data;
+	data[col + row * matrix->width] = value;
+	return matrix;
 }

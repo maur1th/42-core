@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/11 19:19:00 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/12 12:09:54 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-typedef struct	s_mtx
+typedef struct	s_matrix
 {
 	char			*data;
 	size_t			height;
 	size_t			width;
-}				t_mtx;
+}				t_matrix;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -92,12 +92,12 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_itoa_base(int value, int base);
 size_t			ft_sqrt(size_t nb);
 
-t_mtx			*ft_mtxnew(size_t height, size_t width);
-char			ft_mtxget(t_mtx *mtx, size_t row, size_t col);
-t_mtx			*ft_mtxset(t_mtx *mtx, size_t row, size_t col,
+t_matrix			*ft_matrixnew(size_t height, size_t width);
+char			ft_matrixget(t_matrix *matrix, size_t row, size_t col);
+t_matrix			*ft_matrixset(t_matrix *matrix, size_t row, size_t col,
 					char value);
-t_mtx			*ft_mtxadd(t_mtx *m1, t_mtx *m2);
-t_mtx			*ft_mtxpad(t_mtx *src, size_t height, size_t width);
-void			ft_putmtx(t_mtx *mtx);
+t_matrix			*ft_matrixadd(t_matrix *m1, t_matrix *m2);
+t_matrix			*ft_matrixpad(t_matrix *src, size_t height, size_t width);
+void			ft_putmatrix(t_matrix *matrix);
 
 #endif

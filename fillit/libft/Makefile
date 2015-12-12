@@ -75,12 +75,12 @@ SRC			= ./ft_memset.c \
 			  ./ft_lstmap.c \
 			  ./ft_itoa_base.c \
 			  ./ft_sqrt.c \
-			  ./ft_putmtx.c \
-			  ./ft_mtxnew.c \
-			  ./ft_mtxget.c \
-			  ./ft_mtxset.c \
-			  ./ft_mtxadd.c \
-			  ./ft_mtxpad.c
+			  ./ft_putmatrix.c \
+			  ./ft_matrixnew.c \
+			  ./ft_matrixget.c \
+			  ./ft_matrixset.c \
+			  ./ft_matrixadd.c \
+			  ./ft_matrixpad.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)

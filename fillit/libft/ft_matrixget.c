@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxshift.c                                      :+:      :+:    :+:   */
+/*   ft_mtxget.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 19:43:57 by tm                #+#    #+#             */
-/*   Updated: 2015/12/11 19:51:12 by tm               ###   ########.fr       */
+/*   Created: 2015/12/11 17:44:16 by tm                #+#    #+#             */
+/*   Updated: 2015/12/12 12:09:49 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_mtx	*ft_mtxshift(t_mtx *mtx, t_mtx *piece)
+char	ft_matrixget(t_matrix *matrix, size_t row, size_t col)
 {
-	char	*mtx_data;
-
-	mtx_data = mtx->data;
-	while (*data != '\0')
-	{
-		if (*(data) == '1')
-		{
-			data = '0'
-			data++ = '1'
-		}
-	}
-	return (mtx);
+	return (matrix->data[row + col * matrix->width]);
 }
