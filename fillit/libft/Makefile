@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/11 19:17:13 by tm               ###   ########.fr        #
+#    Updated: 2015/12/14 23:32:08 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ SRC			= ./ft_memset.c \
 			  ./ft_lstmap.c \
 			  ./ft_itoa_base.c \
 			  ./ft_sqrt.c \
+			  ./ft_getstream.c \
 			  ./ft_putmatrix.c \
 			  ./ft_matrixnew.c \
 			  ./ft_matrixget.c \
