@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/15 00:44:19 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/15 00:54:33 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-t_list	*ft_create_elem(void *data)
-{
-	t_list		*buf;
-
-	buf = (t_list	*)malloc(sizeof(*buf));
-	if (buf)
-	{
-		buf->next = NULL;
-		buf->content = data;
-	}
-	return (buf);
-}
-
-void	ft_list_push_back(t_list	 **begin_list, void *data)
-{
-	t_list			*ptr;
-
-	ptr = *begin_list;
-	if (!(*begin_list))
-		*begin_list = ft_create_elem(data);
-	else
-	{
-		while ((ptr)->next)
-			ptr = ptr->next;
-		ptr->next = ft_create_elem(data);
-	}
-}
-
-void	copy_read_data(char *read_data, t_list	 *list, size_t length)
+static void		copy_read_data(char *read_data, t_list	 *list, size_t length)
 {
 	size_t			i;
 	size_t			j;
@@ -67,7 +39,7 @@ void	copy_read_data(char *read_data, t_list	 *list, size_t length)
 	read_data[length] = '\0';
 }
 
-void	ft_getstream(size_t fd, char **data)
+void			ft_getstream(size_t fd, char **data)
 {
 	t_list			*list;
 	char			str[6];
@@ -80,7 +52,7 @@ void	ft_getstream(size_t fd, char **data)
 	{
 		str[ret] = '\0';
 		length_read += ret;
-		ft_list_push_back(&list, ft_strdup(str));
+		ft_lstpush(&list, ft_lstnew(str, ret));
 	}
 	*data = (char*)malloc(sizeof(char) * length_read + 1);
 	copy_read_data(*data, list, length_read);
