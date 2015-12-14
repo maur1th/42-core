@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/15 00:54:33 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/15 00:56:37 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-static void		copy_read_data(char *read_data, t_list	 *list, size_t length)
+static void		copy_read_data(char *read_data, t_list *list, size_t length)
 {
 	size_t			i;
 	size_t			j;
