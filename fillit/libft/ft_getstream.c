@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/15 00:14:12 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/15 00:44:19 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void	ft_list_push_back(t_list	 **begin_list, void *data)
 	}
 }
 
-void	copy_read_data(char *read_data, t_list	 *list, int length)
+void	copy_read_data(char *read_data, t_list	 *list, size_t length)
 {
-	int				i;
-	int				j;
+	size_t			i;
+	size_t			j;
 	t_list			*tmp;
 
 	i = 0;
@@ -67,12 +67,12 @@ void	copy_read_data(char *read_data, t_list	 *list, int length)
 	read_data[length] = '\0';
 }
 
-void	ft_getstream(int fd, char **data)
+void	ft_getstream(size_t fd, char **data)
 {
 	t_list			*list;
 	char			str[6];
-	int				ret;
-	int				length_read;
+	size_t			ret;
+	size_t			length_read;
 
 	list = NULL;
 	length_read = 0;
