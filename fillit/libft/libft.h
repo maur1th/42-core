@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/14 20:25:10 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/15 00:52:32 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,13 @@ t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstpush(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 char			*ft_itoa_base(int value, int base);
 size_t			ft_sqrt(size_t nb);
-void			ft_getstream(int fd, char **data);
+void			ft_getstream(size_t fd, char **data);
 
 t_matrix		*ft_matrixnew(size_t height, size_t width);
 char			ft_matrixget(t_matrix *matrix, size_t row, size_t col);
