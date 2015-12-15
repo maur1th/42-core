@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/15 01:02:04 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/15 01:03:59 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char		*copy_read_data(char *data, t_list *list, size_t length)
 	return (data);
 }
 
-char			*ft_getstream(size_t fd)
+char			*ft_readstream(size_t fd)
 {
 	char		*data;
 	t_list		*list;

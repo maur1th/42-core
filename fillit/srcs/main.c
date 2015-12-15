@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/15 00:12:33 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/15 01:04:48 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int main()
 	int		fd;
 
 	fd = open("test.txt", O_RDONLY);
-	ft_getstream(fd, &str);
+	str = ft_readstream(fd);
 	ft_putstr(str);
+
 	// // t_matrix	*m1;
 	// t_matrix	*m2;
 	// t_matrix	*m2_padded;
