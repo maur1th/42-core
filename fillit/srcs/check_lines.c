@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   check_lines.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/12 14:37:20 by tm                #+#    #+#             */
-/*   Updated: 2015/12/18 00:13:23 by Genevieve        ###   ########.fr       */
+/*   Created: 2015/12/17 23:56:50 by Genevieve         #+#    #+#             */
+/*   Updated: 2015/12/18 01:53:08 by Genevieve        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
 #include <libft.h>
+#include <fillit.h>
 
-t_matrix	*matrixshift(t_matrix *matrix, t_matrix *piece);
-char		**strdoublesplit(char const *s);
-int			check_lines(char *str);
+int		check_lines(char *str)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		//TODO: check lines!
+		i++;
+	}
+	return (1);
+}

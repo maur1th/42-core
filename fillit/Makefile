@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
+#    By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/12 16:31:58 by tm               ###   ########.fr        #
+#    Updated: 2015/12/18 00:14:09 by Genevieve        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CFLAGS		= -Wall -Wextra -Werror
 HEADERS 	= ./includes/
 SRC			= ./srcs/main.c \
 			  ./srcs/strdoublesplit.c \
-			  ./srcs/matrixshift.c
+			  ./srcs/matrixshift.c \
+			  ./srcs/check_lines.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)

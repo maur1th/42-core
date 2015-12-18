@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/15 01:04:48 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/18 01:49:03 by Genevieve        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,26 @@
 #include <libft.h>
 #include <fillit.h>
 
-int main()
+int main(int argc, char **argv)
 {
 	char	*str;
 	int		fd;
 
-	fd = open("test.txt", O_RDONLY);
-	str = ft_readstream(fd);
-	ft_putstr(str);
+	if (argc == 2)
+	{
+		fd = open(argv[1], O_RDONLY);
+		str = ft_readstream(fd);
+		if (!(check_lines(str)))
+		{
+			ft_putstr("error\n");
+			return (0);
+		}
+		ft_putstr(str);
+	}
+	else
+	{
+		ft_putstr("error\n");
+	}
 
 	// // t_matrix	*m1;
 	// t_matrix	*m2;
