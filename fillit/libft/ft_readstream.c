@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getstream.c                                     :+:      :+:    :+:   */
+/*   ft_readstream.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: gbienven <gbienven@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/15 01:03:59 by tm               ###   ########.fr       */
+/*   Updated: 2015/12/24 01:18:44 by gbienven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "libft.h"
 
 static char		*copy_read_data(char *data, t_list *list, size_t length)
@@ -24,13 +25,13 @@ static char		*copy_read_data(char *data, t_list *list, size_t length)
 	j = 0;
 	while (list != NULL)
 	{
-		while (((char*)list->content)[i] != '\0')
+		while (i < list->content_size)
 		{
 			data[i + j] = ((char*)list->content)[i];
 			i += 1;
 		}
+		j += i;
 		i = 0;
-		j += ft_strlen(list->content);
 		tmp = list;
 		list = list->next;
 		free(tmp->content);
@@ -52,7 +53,6 @@ char			*ft_readstream(size_t fd)
 	length_read = 0;
 	while ((ret = read(fd, buf, 5)))
 	{
-		buf[ret] = '\0';
 		length_read += ret;
 		ft_lstpush(&list, ft_lstnew(buf, ret));
 	}
