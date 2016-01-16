@@ -18,6 +18,7 @@ HEADERS 	= ./includes/
 SRC			= ./srcs/main.c \
 			  ./srcs/strdoublesplit.c \
 			  ./srcs/matrixshift.c \
+			  ./srcs/check_file.c \
 			  ./srcs/make_tetriminos.c \
 			  ./srcs/check_tetriminos.c
 OBJ			= $(SRC:.c=.o)
