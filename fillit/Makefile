@@ -6,7 +6,7 @@
 #    By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/27 02:17:48 by Genevieve        ###   ########.fr        #
+#    Updated: 2016/01/16 12:40:17 by Genevieve        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC			= ./srcs/main.c \
 			  ./srcs/matrixshift.c \
 			  ./srcs/check_file.c \
 			  ./srcs/make_tetriminos.c \
+			  ./srcs/trim_tetrimino.c \
 			  ./srcs/check_tetriminos.c
 OBJ			= $(SRC:.c=.o)
 
