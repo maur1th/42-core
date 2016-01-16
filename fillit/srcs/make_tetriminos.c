@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_tetriminos.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbienven <gbienven@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2015/12/22 00:26:43 by gbienven         ###   ########.fr       */
+/*   Updated: 2016/01/16 15:44:14 by Genevieve        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ t_matrix		*make_tetrimino(char *str, int fill)
 		if (str[i] == '#')
 			ft_matrixset(tetrimino, y, x, fill);
 		else if (str[i] == '.')
-			ft_matrixset(tetrimino, y, x, '.');
+			ft_matrixset(tetrimino, y, x, '0');
 		i++;
 	}
+	trim_tetrimino(tetrimino);
 	ft_putmatrix(tetrimino);
+	ft_putstr("---\n");
 	return (tetrimino);
 }
 
