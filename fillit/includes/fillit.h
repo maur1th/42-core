@@ -19,7 +19,6 @@
 # define TT_LENGTH (TT_HEIGHT * (TT_WIDTH + 1)) + 1
 
 t_matrix	*matrixshift(t_matrix *matrix, t_matrix *piece);
-char		**strdoublesplit(char const *s);
 int			check_lines(char *str);
 t_list		*make_tetriminos(char *str);
 t_matrix	*make_tetrimino(char *str, int fill);
