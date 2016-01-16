@@ -33,7 +33,7 @@ static int		check_line(char *str)
 	return (hash);
 }
 
-static int		check_tetrimino(char *str)
+static t_bool	check_tetrimino(char *str)
 {
 	int			i;
 	int			current_line;
@@ -47,17 +47,17 @@ static int		check_tetrimino(char *str)
 	{
 		hash = check_line(str + i);
 		if (hash == -1)
-			return (0);
+			return (false);
 		hash_total += hash;
 		i += TT_WIDTH + 1;
 		current_line++;
 	}
 	if (str[i] != '\n' || hash_total != 4)
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }
 
-int				check_lines(char *str)
+t_bool			check_file(char *str)
 {
 	int			i;
 	int			number_of_tetrominos;
@@ -66,12 +66,12 @@ int				check_lines(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (check_tetrimino(str + i) == 0)
-			return (0);
+		if (!check_tetrimino(str + i))
+			return (false);
 		i += TT_LENGTH;
 		number_of_tetrominos++;
 	}
 	if (number_of_tetrominos < 1 || number_of_tetrominos > 26)
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }

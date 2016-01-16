@@ -34,7 +34,7 @@ int			main(int argc, char **argv)
 		if (fd < 0)
 			log_error_and_exit("error\n");
 		str = ft_readstream(fd);
-		if (!(check_lines(str)))
+		if (!(check_file(str)))
 			log_error_and_exit("error\n");
 		list = make_tetriminos(str);
 		if (!(check_form(list)))
