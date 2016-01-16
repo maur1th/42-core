@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbienven <gbienven@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2015/12/24 03:00:24 by gbienven         ###   ########.fr       */
+/*   Updated: 2015/12/27 03:47:36 by Genevieve        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int			main(int argc, char **argv)
 {
 	char	*str;
 	int		fd;
+	t_list	*list;
 
 	if (argc == 2)
 	{
@@ -34,12 +35,10 @@ int			main(int argc, char **argv)
 			log_error_and_exit("error\n");
 		str = ft_readstream(fd);
 		if (!(check_lines(str)))
-		{
 			log_error_and_exit("error\n");
-		}
-		ft_putstr(str);
-		ft_putstr("=================\n=================\n\n");
-		make_tetriminos(str);
+		list = make_tetriminos(str);
+		if (!(check_form(list)))
+			log_error_and_exit("error\n");
 	}
 	else
 		log_error_and_exit("error\n");

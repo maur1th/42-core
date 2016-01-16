@@ -6,7 +6,7 @@
 /*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 14:37:20 by tm                #+#    #+#             */
-/*   Updated: 2015/12/26 17:15:39 by Genevieve        ###   ########.fr       */
+/*   Updated: 2015/12/28 00:44:25 by Genevieve        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 t_matrix	*matrixshift(t_matrix *matrix, t_matrix *piece);
 char		**strdoublesplit(char const *s);
 int			check_lines(char *str);
-void		make_tetriminos(char *str);
-void		make_tetrimino(char *str, int fill);
+t_list		*make_tetriminos(char *str);
+t_matrix	*make_tetrimino(char *str, int fill);
 void		log_error_and_exit(char *str);
+int			check_form(t_list *list);
 
 #endif
