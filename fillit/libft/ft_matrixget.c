@@ -14,5 +14,5 @@
 
 char	ft_matrixget(t_matrix *matrix, size_t row, size_t col)
 {
-	return (matrix->data[row + col * matrix->width]);
+	return (matrix->data[row * matrix->width + col]);
 }

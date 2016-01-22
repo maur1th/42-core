@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 #include <libft.h>
 #include <fillit.h>
 
-int				check_empty_col(t_matrix *matrix, int row)
+static int		check_empty_row(t_matrix *matrix, int row)
 {
 	int			i;
 	char		data;
@@ -30,7 +30,7 @@ int				check_empty_col(t_matrix *matrix, int row)
 	return (1);
 }
 
-int				check_empty_row(t_matrix *matrix, int col)
+static int		check_empty_col(t_matrix *matrix, int col)
 {
 	int			i;
 	char		data;
@@ -46,64 +46,67 @@ int				check_empty_row(t_matrix *matrix, int col)
 	return (1);
 }
 
-t_matrix		*trim_tetrimino(t_matrix *matrix)
+static t_matrix	*new_trimmed_tetrimino(
+	t_matrix *matrix, int *start_row, int *start_col, int i)
 {
-	int			i;
 	int			empty_cols;
 	int			empty_rows;
-	int			start_x;
-	int			start_y;
-	// char		fill;
-	t_matrix	*tetrimino;
 
-	i = 0;
 	empty_cols = 0;
 	empty_rows = 0;
-	start_x = -1;
-	start_y = -1;
-	while (i < TT_WIDTH)
+	while (++i < TT_WIDTH)
 	{
 		if (check_empty_col(matrix, i))
 			empty_cols++;
-		else if (start_x == -1)
-			start_x = i;
-		i++;
+		else if (*start_col == -1)
+			*start_col = i;
 	}
-	i = 0;
-	while (i < TT_HEIGHT)
+	i = -1;
+	while (++i < TT_HEIGHT)
 	{
 		if (check_empty_row(matrix, i))
 			empty_rows++;
-		else if (start_y == -1)
-			start_y = i;
-		i++;
+		else if (*start_row == -1)
+			*start_row = i;
 	}
-	tetrimino = ft_matrixnew(TT_HEIGHT - empty_rows, TT_WIDTH - empty_cols);
-	printf("new trimmed should be %d x %d\n", TT_HEIGHT - empty_rows, TT_WIDTH - empty_cols);
-	// fill = ft_matrixget(matrix, start_x, start_y);
-	// ft_matrixset(tetrimino, start_x, start_y, fill);
+	return (ft_matrixnew(TT_HEIGHT - empty_rows, TT_WIDTH - empty_cols));
+}
 
-	int	x;
-	int	y;
-	x = 0;
-	y = 0;
-	while (x < (TT_HEIGHT - empty_rows))
+static void		fill_tetrimino(
+	t_matrix *tetrimino, t_matrix *matrix, int start_row, int start_col)
+{
+	int	row;
+	int	col;
+
+	row = -1;
+	col = -1;
+	while (++row < (int)tetrimino->height)
 	{
-		ft_putnbr(x);
-		ft_putchar('\n');
-		while (y < (TT_WIDTH - empty_cols))
+		while (++col < (int)tetrimino->width)
 		{
-			ft_matrixset(tetrimino, x, y, ft_matrixget(matrix, start_x + x, start_y + y));
-			// start_x++;
-			// start_y++;
-			y++;
+			ft_matrixset(tetrimino, row, col,
+				ft_matrixget(matrix, start_row + row, start_col + col));
 		}
-		x++;
+		col = -1;
 	}
-	// fill = ft_matrixget(matrix, start_x, start_y);
-	// ft_matrixset(tetrimino, x, y, fill);
-	// printf("fill: %c\n", fill);
-	// printf("start_x : %d start_y : %d\n", start_x, start_y);
+}
+
+t_matrix		*trim_tetrimino(t_matrix *matrix)
+{
+	int			start_row;
+	int			start_col;
+	t_matrix	*tetrimino;
+
+	start_row = -1;
+	start_col = -1;
+	tetrimino = new_trimmed_tetrimino(matrix, &start_row, &start_col, -1);
+	fill_tetrimino(tetrimino, matrix, start_row, start_col);
+	// free(matrix->data);
+	// free(matrix);
+	// matrix = NULL;
+	// DEBUG
+	ft_putstr("After filling:\n");
 	ft_putmatrix(tetrimino);
+	ft_putstr("===\n");
 	return (tetrimino);
 }
