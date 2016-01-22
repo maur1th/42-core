@@ -19,7 +19,7 @@ SRC			= ./srcs/main.c \
 			  ./srcs/matrixshift.c \
 			  ./srcs/check_file.c \
 			  ./srcs/make_tetriminos.c \
-			  ./srcs/trim_tetrimino.c \
+			  ./srcs/trim_tetriminos.c \
 			  ./srcs/check_tetriminos.c
 OBJ			= $(SRC:.c=.o)
 
