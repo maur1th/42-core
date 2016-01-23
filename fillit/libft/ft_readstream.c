@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readstream.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbienven <gbienven@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/24 01:18:44 by gbienven         ###   ########.fr       */
+/*   Updated: 2016/01/23 07:06:55 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 #include "libft.h"
 
 static char		*copy_read_data(char *data, t_list *list, size_t length)

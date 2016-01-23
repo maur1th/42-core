@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2016/01/23 06:46:03 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/23 06:58:52 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int			main(int argc, char **argv)
 		if (!(check_file(str)))
 			log_error_and_exit("error\n");
 		list = make_tetriminos(str);
+		print_tetriminos(list);
 		if (!(check_tetriminos(list)))
 			log_error_and_exit("error\n");
 	}

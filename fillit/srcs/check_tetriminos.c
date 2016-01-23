@@ -6,11 +6,10 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 23:56:50 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/23 06:46:57 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/23 07:07:03 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <libft.h>
 #include <fillit.h>
 #define mget(matrix, row, col) ft_matrixget(matrix, row, col)
@@ -51,7 +50,6 @@ int			check_tetriminos(t_list *list)
 	{
 		if (!check_each_tetrimino(list->content, -1, -1, 0))
 			return (0);
-		printf("new tetrimino! <3\n");
 		list = list->next;
 	}
 	return (1);

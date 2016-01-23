@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/23 06:57:14 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/23 06:58:47 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ t_list			*make_tetriminos(char *str)
 		ft_lstpush(&list, new_list);
 		str += TT_LENGTH;
 	}
-	print_tetriminos(list);
 	return (list);
 }
