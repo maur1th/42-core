@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+         #
+#    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2016/01/16 12:40:17 by Genevieve        ###   ########.fr        #
+#    Updated: 2016/01/23 06:38:29 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC			= ./srcs/main.c \
 			  ./srcs/check_file.c \
 			  ./srcs/make_tetriminos.c \
 			  ./srcs/trim_tetrimino.c \
-			  ./srcs/check_tetriminos.c
+			  ./srcs/check_tetriminos.c \
+			  ./srcs/print_tetriminos.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)

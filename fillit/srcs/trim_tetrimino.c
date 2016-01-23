@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trim_tetriminos.c                                  :+:      :+:    :+:   */
+/*   trim_tetrimino.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbienven <gbienven@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 14:37:20 by gbienven          #+#    #+#             */
-/*   Updated: 2015/12/28 00:44:25 by gbienven         ###   ########.fr       */
+/*   Updated: 2016/01/23 06:35:49 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,12 +101,7 @@ t_matrix		*trim_tetrimino(t_matrix *matrix)
 	start_col = -1;
 	tetrimino = new_trimmed_tetrimino(matrix, &start_row, &start_col, -1);
 	fill_tetrimino(tetrimino, matrix, start_row, start_col);
-	// free(matrix->data);
-	// free(matrix);
-	// matrix = NULL;
-	// DEBUG
-	ft_putstr("After filling:\n");
-	ft_putmatrix(tetrimino);
-	ft_putstr("===\n");
+	free(matrix->data);
+	free(matrix);
 	return (tetrimino);
 }

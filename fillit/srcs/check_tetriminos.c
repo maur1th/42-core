@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_tetriminos.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 23:56:50 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/16 11:42:15 by Genevieve        ###   ########.fr       */
+/*   Updated: 2016/01/23 06:46:57 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	check_each_tetrimino(t_matrix *matrix, int i, int j, int check)
 	return (1);
 }
 
-int			check_form(t_list *list)
+int			check_tetriminos(t_list *list)
 {
 	if (list == NULL)
 		return (0);

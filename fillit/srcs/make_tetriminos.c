@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_tetriminos.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/16 15:44:14 by Genevieve        ###   ########.fr       */
+/*   Updated: 2016/01/23 06:42:16 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fillit.h>
 #include <stdlib.h>
 
-t_matrix		*make_tetrimino(char *str, int fill)
+static t_matrix	*make_one(char *str, int fill)
 {
 	int			i;
 	int			y;
@@ -33,10 +33,7 @@ t_matrix		*make_tetrimino(char *str, int fill)
 			ft_matrixset(tetrimino, y, x, '0');
 		i++;
 	}
-	trim_tetrimino(tetrimino);
-	ft_putmatrix(tetrimino);
-	ft_putstr("---\n");
-	return (tetrimino);
+	return (trim_tetrimino(tetrimino));
 }
 
 t_list			*make_tetriminos(char *str)
@@ -52,12 +49,13 @@ t_list			*make_tetriminos(char *str)
 	list = NULL;
 	while (str[i] != '\0')
 	{
-		tetrimino = make_tetrimino(str + i, fill);
+		tetrimino = make_one(str + i, fill);
 		new_list = ft_lstnew(tetrimino, sizeof(t_matrix));
 		free(tetrimino);
 		ft_lstpush(&list, new_list);
 		i += TT_LENGTH;
 		fill++;
 	}
+	print_tetriminos(list);
 	return (list);
 }
