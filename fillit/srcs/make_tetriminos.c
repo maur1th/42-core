@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/23 06:42:16 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/23 06:51:11 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fillit.h>
 #include <stdlib.h>
 
-static t_matrix	*make_one(char *str, int fill)
+static t_matrix	*make_one(char *str)
 {
 	int			i;
 	int			y;
@@ -28,7 +28,7 @@ static t_matrix	*make_one(char *str, int fill)
 		x = (i % (TT_WIDTH + 1));
 		y = (i / (TT_WIDTH + 1));
 		if (str[i] == '#')
-			ft_matrixset(tetrimino, y, x, fill);
+			ft_matrixset(tetrimino, y, x, '1');
 		else if (str[i] == '.')
 			ft_matrixset(tetrimino, y, x, '0');
 		i++;
@@ -39,22 +39,19 @@ static t_matrix	*make_one(char *str, int fill)
 t_list			*make_tetriminos(char *str)
 {
 	int			i;
-	int			fill;
 	t_list		*list;
 	t_list		*new_list;
 	t_matrix	*tetrimino;
 
 	i = 0;
-	fill = 'A';
 	list = NULL;
 	while (str[i] != '\0')
 	{
-		tetrimino = make_one(str + i, fill);
+		tetrimino = make_one(str + i);
 		new_list = ft_lstnew(tetrimino, sizeof(t_matrix));
 		free(tetrimino);
 		ft_lstpush(&list, new_list);
 		i += TT_LENGTH;
-		fill++;
 	}
 	print_tetriminos(list);
 	return (list);
