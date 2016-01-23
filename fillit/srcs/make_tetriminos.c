@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/23 06:52:42 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/23 06:57:14 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@
 static t_matrix	*make_one(char *str)
 {
 	int			i;
-	int			y;
-	int			x;
+	int			row;
+	int			col;
 	t_matrix	*tetrimino;
 
 	i = 0;
 	tetrimino = ft_matrixnew(TT_HEIGHT, TT_WIDTH);
 	while (i < TT_LENGTH)
 	{
-		x = (i % (TT_WIDTH + 1));
-		y = (i / (TT_WIDTH + 1));
+		col = (i % (TT_WIDTH + 1));
+		row = (i / (TT_WIDTH + 1));
 		if (str[i] == '#')
-			ft_matrixset(tetrimino, y, x, '1');
+			ft_matrixset(tetrimino, row, col, '1');
 		else if (str[i] == '.')
-			ft_matrixset(tetrimino, y, x, '0');
+			ft_matrixset(tetrimino, row, col, '0');
 		i++;
 	}
 	return (trim_tetrimino(tetrimino));
