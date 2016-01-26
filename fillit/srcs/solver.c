@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 12:12:11 by tm                #+#    #+#             */
-/*   Updated: 2016/01/26 19:51:00 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/27 00:47:35 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void				solve(t_list *list, size_t size)
 	square = ft_matrixnew(size, size);
 	if (solve_for_size(square, list))
 	{
+		ft_strreplace(square->data, '0', '.');
 		ft_putmatrix(square);
 	}
 	else

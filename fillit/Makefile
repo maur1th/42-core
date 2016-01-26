@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2016/01/26 20:51:49 by tm               ###   ########.fr        #
+#    Updated: 2016/01/27 00:39:40 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ SRC			= ./srcs/main.c \
 			  ./srcs/trim_tetrimino.c \
 			  ./srcs/check_tetriminos.c \
 			  ./srcs/solver.c \
-			  ./srcs/insert_tetrimino.c \
-			  ./srcs/print_tetriminos.c
+			  ./srcs/insert_tetrimino.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)
