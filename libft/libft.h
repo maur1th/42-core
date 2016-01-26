@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2016/01/25 12:14:49 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/27 00:46:26 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_itoa_base(int value, int base);
 size_t			ft_sqrt(size_t nb);
 char			*ft_readstream(size_t fd);
+void			ft_strreplace(char *str, char s1, char s2);
 
 t_matrix		*ft_matrixnew(size_t height, size_t width);
 char			ft_matrixget(t_matrix *matrix, size_t row, size_t col);
