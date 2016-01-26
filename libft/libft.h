@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/01 21:13:06 by tmaurin          ###   ########.fr       */
+/*   Updated: 2016/01/25 12:14:49 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
-# include <stdlib.h>
 # include <string.h>
+
+typedef int t_bool;
+enum { false, true };
 
 typedef struct	s_list
 {
@@ -22,6 +23,13 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_matrix
+{
+	char			*data;
+	size_t			height;
+	size_t			width;
+}				t_matrix;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -36,8 +44,7 @@ char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*ft_strcat(char *dest, const char *src);
 char			*ft_strncat(char *dest, const char *src, size_t nb);
-size_t			ft_strlcat(char *dst, const char *src,
-					size_t size);
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
@@ -82,9 +89,20 @@ t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstpush(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 char			*ft_itoa_base(int value, int base);
+size_t			ft_sqrt(size_t nb);
+char			*ft_readstream(size_t fd);
+
+t_matrix		*ft_matrixnew(size_t height, size_t width);
+char			ft_matrixget(t_matrix *matrix, size_t row, size_t col);
+t_matrix		*ft_matrixset(t_matrix *matrix, size_t row, size_t col,
+					char value);
+t_matrix		*ft_matrixadd(t_matrix *m1, t_matrix *m2);
+t_matrix		*ft_matrixpad(t_matrix *src, size_t height, size_t width);
+void			ft_putmatrix(t_matrix *matrix);
 
 #endif

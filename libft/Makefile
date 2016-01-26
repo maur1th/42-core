@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+         #
+#    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2015/12/01 21:37:47 by tmaurin          ###   ########.fr        #
+#    Updated: 2015/12/15 01:04:31 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,9 +71,18 @@ SRC			= ./ft_memset.c \
 			  ./ft_lstdelone.c \
 			  ./ft_lstdel.c \
 			  ./ft_lstadd.c \
+			  ./ft_lstpush.c \
 			  ./ft_lstiter.c \
 			  ./ft_lstmap.c \
-			  ./ft_itoa_base.c
+			  ./ft_itoa_base.c \
+			  ./ft_sqrt.c \
+			  ./ft_readstream.c \
+			  ./ft_putmatrix.c \
+			  ./ft_matrixnew.c \
+			  ./ft_matrixget.c \
+			  ./ft_matrixset.c \
+			  ./ft_matrixadd.c \
+			  ./ft_matrixpad.c
 OBJ			= $(SRC:.c=.o)
 
 all: $(NAME)

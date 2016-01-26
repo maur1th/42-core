@@ -6,11 +6,11 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 23:26:48 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:20 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 10:38:08 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	ft_memdel(void **ap)
 {

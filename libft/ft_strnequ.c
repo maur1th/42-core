@@ -6,7 +6,7 @@
 /*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 00:38:27 by tm                #+#    #+#             */
-/*   Updated: 2015/12/01 20:30:17 by tmaurin          ###   ########.fr       */
+/*   Updated: 2015/12/05 13:05:33 by tmaurin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	return (ft_strncmp(s1, s2, n) == 0 ? 1 : 0);
+	return (ft_strncmp(s1, s2, n) == 0);
 }
