@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/23 06:58:47 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/26 19:02:38 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fillit.h>
 #include <stdlib.h>
 
-static t_matrix	*make_one(char *str)
+static t_matrix	*make_one(char *str, char letter)
 {
 	int			i;
 	int			row;
@@ -28,7 +28,7 @@ static t_matrix	*make_one(char *str)
 		col = (i % (TT_WIDTH + 1));
 		row = (i / (TT_WIDTH + 1));
 		if (str[i] == '#')
-			ft_matrixset(tetrimino, row, col, '1');
+			ft_matrixset(tetrimino, row, col, letter);
 		else if (str[i] == '.')
 			ft_matrixset(tetrimino, row, col, '0');
 		i++;
@@ -41,11 +41,13 @@ t_list			*make_tetriminos(char *str)
 	t_list		*list;
 	t_list		*new_list;
 	t_matrix	*tetrimino;
+	char		letter;
 
 	list = NULL;
+	letter = 'A';
 	while (*str != '\0')
 	{
-		tetrimino = make_one(str);
+		tetrimino = make_one(str, letter++);
 		new_list = ft_lstnew(tetrimino, sizeof(t_matrix));
 		free(tetrimino);
 		ft_lstpush(&list, new_list);
