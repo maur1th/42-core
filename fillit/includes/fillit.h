@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 14:37:20 by tm                #+#    #+#             */
-/*   Updated: 2016/01/23 06:46:42 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/26 19:10:15 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 # define TT_WIDTH 4
 # define TT_LENGTH (TT_HEIGHT * (TT_WIDTH + 1)) + 1
 
-typedef int t_bool;
-enum { false, true };
-
 t_matrix	*matrixshift(t_matrix *matrix, t_matrix *piece);
 t_bool		check_file(char *str);
 int			check_tetriminos(t_list *list);
 t_list		*make_tetriminos(char *str);
 t_matrix	*trim_tetrimino(t_matrix *matrix);
+void		solve(t_list *list, size_t size);
+t_bool		insert_tetrimino(t_matrix *square, t_matrix *tetr, int pos);
+
 void		print_tetriminos(t_list *list);
 
 #endif
