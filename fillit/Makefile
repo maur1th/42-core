@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2016/01/26 16:23:21 by tm               ###   ########.fr        #
+#    Updated: 2016/01/26 20:51:49 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ CFLAGS		= -Wall -Wextra -Werror
 
 HEADERS 	= ./includes/
 SRC			= ./srcs/main.c \
-			  ./srcs/matrixshift.c \
 			  ./srcs/check_file.c \
 			  ./srcs/make_tetriminos.c \
 			  ./srcs/trim_tetrimino.c \
