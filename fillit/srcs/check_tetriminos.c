@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_tetriminos.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 23:56:50 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/23 07:07:03 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/26 21:15:03 by Genevieve        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@ static int	check_each_tetrimino(t_matrix *matrix, int i, int j, int check)
 		j = -1;
 		while (j++ < TT_WIDTH)
 		{
+			check = 0;
 			data = mget(matrix, i, j);
 			if (data != '.')
 			{
-				if ((i + 1) < TT_HEIGHT && (mget(matrix, i + 1, j) != '.'))
+				if ((i + 1) < TT_HEIGHT && (mget(matrix, i + 1, j) != '0'))
 					check++;
-				if ((j + 1) < TT_WIDTH && (mget(matrix, i, j + 1) != '.'))
+				if ((j + 1) < TT_WIDTH && (mget(matrix, i, j + 1) != '0'))
 					check++;
-				if ((i - 1) >= 0 && (mget(matrix, i - 1, j) != '.'))
+				if ((i - 1) >= 0 && (mget(matrix, i - 1, j) != '0'))
 					check++;
-				if ((j - 1) >= 0 && (mget(matrix, i, j - 1) != '.'))
+				if ((j - 1) >= 0 && (mget(matrix, i, j - 1) != '0'))
 					check++;
 				if (check < 1)
 					return (0);
