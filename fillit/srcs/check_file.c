@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_tetriminos.c                                 :+:      :+:    :+:   */
+/*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 23:56:50 by gbienven          #+#    #+#             */
-/*   Updated: 2015/12/28 02:06:23 by Genevieve        ###   ########.fr       */
+/*   Updated: 2016/01/27 13:12:40 by Genevieve        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static t_bool	check_tetrimino(char *str)
 		i += TT_WIDTH + 1;
 		current_line++;
 	}
-	if (str[i] != '\n' || hash_total != 4)
+	if ((str[i] != '\n' && str[i] != '\0')|| hash_total != 4)
 		return (false);
 	return (true);
 }
