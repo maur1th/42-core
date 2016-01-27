@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmaurin <tmaurin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/08 12:32:13 by tmaurin           #+#    #+#             */
-/*   Updated: 2015/12/01 20:23:59 by tmaurin          ###   ########.fr       */
+/*   Updated: 2016/01/27 01:03:56 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 			dst[i] = '\0';
 			i += 1;
 		}
-		dst[i] = '\0';
 	}
 	return (dst);
 }
