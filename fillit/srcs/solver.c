@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 12:12:11 by tm                #+#    #+#             */
-/*   Updated: 2016/01/27 00:47:35 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/27 20:35:23 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ static t_bool		solve_for_size(t_matrix *square, t_list *list)
 		backup = ft_strdup(square->data);
 		if (insert_tetrimino(square, list->content, pos++))
 			if (solve_for_size(square, list->next))
+			{
+				free(backup);
 				return (true);
+			}
 		free(square->data);
 		square->data = backup;
 	}
@@ -41,6 +44,7 @@ void				solve(t_list *list, size_t size)
 	square = ft_matrixnew(size, size);
 	if (solve_for_size(square, list))
 	{
+		ft_lstdel(&list, del_tetrimino);
 		ft_strreplace(square->data, '0', '.');
 		ft_putmatrix(square);
 	}
@@ -48,4 +52,6 @@ void				solve(t_list *list, size_t size)
 	{
 		solve(list, size + 1);
 	}
+	free(square->data);
+	free(square);
 }

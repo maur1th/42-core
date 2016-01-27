@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxget.c                                        :+:      :+:    :+:   */
+/*   del_tetrimino.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 17:44:16 by tm                #+#    #+#             */
-/*   Updated: 2015/12/12 12:09:49 by tm               ###   ########.fr       */
+/*   Created: 2016/01/27 20:33:44 by tm                #+#    #+#             */
+/*   Updated: 2016/01/27 20:45:22 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <libft.h>
 
-char	ft_matrixget(t_matrix *matrix, size_t row, size_t col)
+void			del_tetrimino(void *content, size_t size)
 {
-	size_t	position;
-
-	position = row * matrix->width + col;
-	return (ft_strlen(matrix->data) > position ?
-		matrix->data[row * matrix->width + col] : '\0');
+  (void)size;
+  free(((t_matrix*)content)->data);
+  free(content);
 }

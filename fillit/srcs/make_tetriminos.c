@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/26 19:02:38 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/27 20:21:03 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static t_matrix	*make_one(char *str, char letter)
 t_list			*make_tetriminos(char *str)
 {
 	t_list		*list;
-	t_list		*new_list;
+	t_list		*node;
 	t_matrix	*tetrimino;
 	char		letter;
 
@@ -48,9 +48,9 @@ t_list			*make_tetriminos(char *str)
 	while (*str != '\0')
 	{
 		tetrimino = make_one(str, letter++);
-		new_list = ft_lstnew(tetrimino, sizeof(t_matrix));
+		node = ft_lstnew(tetrimino, sizeof(t_matrix));
 		free(tetrimino);
-		ft_lstpush(&list, new_list);
+		ft_lstpush(&list, node);
 		str += TT_LENGTH;
 	}
 	return (list);

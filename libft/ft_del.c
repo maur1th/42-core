@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mtxget.c                                        :+:      :+:    :+:   */
+/*   ft_del.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/11 17:44:16 by tm                #+#    #+#             */
-/*   Updated: 2015/12/12 12:09:49 by tm               ###   ########.fr       */
+/*   Created: 2016/01/27 20:03:04 by tm                #+#    #+#             */
+/*   Updated: 2016/01/27 20:15:50 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	ft_matrixget(t_matrix *matrix, size_t row, size_t col)
+void			ft_del(void *content, size_t size)
 {
-	size_t	position;
-
-	position = row * matrix->width + col;
-	return (ft_strlen(matrix->data) > position ?
-		matrix->data[row * matrix->width + col] : '\0');
+  (void)size;
+  free(content);
 }

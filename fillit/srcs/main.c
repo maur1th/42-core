@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2016/01/26 19:27:35 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/27 20:49:50 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static t_list	*init(char *filename)
 	tetrimino_list = make_tetriminos(str);
 	if (!(check_tetriminos(tetrimino_list)))
 		log_error_and_exit("error\n");
+	free(str);
 	return (tetrimino_list);
 }
 
@@ -51,7 +52,7 @@ int				main(int argc, char **argv)
 	}
 	else
 	{
-		log_error_and_exit("error\n");		
+		log_error_and_exit("error\n");
 	}
 	return (0);
 }
