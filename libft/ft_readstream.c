@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2016/01/23 07:06:55 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/28 12:44:24 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,28 @@
 #include <unistd.h>
 #include "libft.h"
 
-static char		*copy_read_data(char *data, t_list *list, size_t length)
+static char		*copy_read_data(t_list *list, size_t length_read)
 {
-	size_t		i;
-	size_t		j;
+	char		*data;
 	t_list		*tmp;
 
-	i = 0;
-	j = 0;
+	if(!(data = (char*)malloc(sizeof(char) * (length_read + 1))))
+		return (NULL);
+	ft_bzero(data, length_read + 1);
+	tmp = list;
 	while (list != NULL)
 	{
-		while (i < list->content_size)
-		{
-			data[i + j] = ((char*)list->content)[i];
-			i += 1;
-		}
-		j += i;
-		i = 0;
-		tmp = list;
+		ft_strncat(data, list->content, list->content_size);
 		list = list->next;
-		free(tmp->content);
-		free(tmp);
 	}
-	data[length] = '\0';
+	ft_lstdel(&tmp, ft_del);
 	return (data);
 }
 
 char			*ft_readstream(size_t fd)
 {
-	char		*data;
 	t_list		*list;
-	char		buf[6];
+	char		buf[5];
 	size_t		ret;
 	size_t		length_read;
 
@@ -55,6 +46,5 @@ char			*ft_readstream(size_t fd)
 		length_read += ret;
 		ft_lstpush(&list, ft_lstnew(buf, ret));
 	}
-	data = (char*)malloc(sizeof(char) * length_read + 1);
-	return (copy_read_data(data, list, length_read));
+	return (copy_read_data(list, length_read));
 }
