@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 14:37:20 by tm                #+#    #+#             */
-/*   Updated: 2016/01/27 20:43:18 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/28 10:50:02 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_list		*make_tetriminos(char *str);
 t_matrix	*trim_tetrimino(t_matrix *matrix);
 void		solve(t_list *list, size_t size);
 t_bool		insert_tetrimino(t_matrix *square, t_matrix *tetr, int pos);
+void		remove_tetrimino(char *square_data, char tetr_letter);
 void		del_tetrimino(void *content, size_t size);
 
 #endif

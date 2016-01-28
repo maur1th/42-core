@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 11:01:50 by tm                #+#    #+#             */
-/*   Updated: 2016/01/27 21:03:21 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/28 11:03:36 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,14 @@ t_bool			insert_tetrimino(t_matrix *square, t_matrix *tetr, int pos)
 		return (false);
 	insert(square, tetr, pos);
 	return (true);
+}
+
+void	remove_tetrimino(char *square_data, char tetr_letter)
+{
+	while (*square_data != '\0')
+	{
+		if (*square_data == tetr_letter)
+			*square_data = '0';
+		square_data++;
+	}
 }
