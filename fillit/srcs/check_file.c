@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 23:56:50 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/27 13:12:40 by Genevieve        ###   ########.fr       */
+/*   Updated: 2016/01/28 13:14:31 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ static t_bool	check_tetrimino(char *str)
 	return (true);
 }
 
-t_bool			check_file(char *str)
+t_bool			check_file(char *str, size_t str_length)
 {
-	int			i;
 	int			number_of_tetrominos;
+	size_t		i;
 
 	number_of_tetrominos = 0;
 	i = 0;
@@ -68,7 +68,7 @@ t_bool			check_file(char *str)
 	{
 		if (!check_tetrimino(str + i))
 			return (false);
-		i += TT_LENGTH;
+		i = i + TT_LENGTH < str_length ? i + TT_LENGTH : str_length;
 		number_of_tetrominos++;
 	}
 	if (number_of_tetrominos < 1 || number_of_tetrominos > 26)

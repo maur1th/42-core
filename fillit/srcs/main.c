@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2016/01/27 20:49:50 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/28 13:12:37 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,16 @@ static t_list	*init(char *filename)
 	char	*str;
 	int		fd;
 	t_list	*tetrimino_list;
+	size_t	str_length;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		log_error_and_exit("error\n");
 	str = ft_readstream(fd);
-	if (!(check_file(str)))
+	str_length = ft_strlen(str);
+	if (!(check_file(str, str_length)))
 		log_error_and_exit("error\n");
-	tetrimino_list = make_tetriminos(str);
+	tetrimino_list = make_tetriminos(str, str_length);
 	if (!(check_tetriminos(tetrimino_list)))
 		log_error_and_exit("error\n");
 	free(str);

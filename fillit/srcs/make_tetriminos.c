@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 16:29:54 by gbienven          #+#    #+#             */
-/*   Updated: 2016/01/27 20:21:03 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/28 13:24:46 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,31 @@ static t_matrix	*make_one(char *str, char letter)
 	return (trim_tetrimino(tetrimino));
 }
 
-t_list			*make_tetriminos(char *str)
+static t_list	*push_tetrimino(t_list *list, t_matrix *tetrimino)
+{
+	t_list		*node;
+
+	node = ft_lstnew(tetrimino, sizeof(t_matrix));
+	free(tetrimino);
+	ft_lstpush(&list, node);
+	return (list);
+}
+
+t_list			*make_tetriminos(char *str, size_t str_length)
 {
 	t_list		*list;
-	t_list		*node;
 	t_matrix	*tetrimino;
 	char		letter;
+	size_t		i;
 
 	list = NULL;
 	letter = 'A';
-	while (*str != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		tetrimino = make_one(str, letter++);
-		node = ft_lstnew(tetrimino, sizeof(t_matrix));
-		free(tetrimino);
-		ft_lstpush(&list, node);
-		str += TT_LENGTH;
+		tetrimino = make_one(str + i, letter++);
+		list = push_tetrimino(list, tetrimino);
+		i = i + TT_LENGTH < str_length ? i + TT_LENGTH : str_length;
 	}
 	return (list);
 }
