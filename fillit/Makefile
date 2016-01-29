@@ -6,7 +6,7 @@
 #    By: tm <tm@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/28 14:40:16 by tmaurin           #+#    #+#              #
-#    Updated: 2016/01/28 11:04:26 by tm               ###   ########.fr        #
+#    Updated: 2016/01/29 19:01:29 by tm               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,11 @@ $(NAME): $(OBJ)
 	$(CC) -o $@ -c -I $(HEADERS) $(CFLAGS) $<
 
 clean:
+	make clean -C libft/
 	/bin/rm -f $(OBJ)
 
 fclean: clean
+	make fclean -C libft/
 	/bin/rm -f $(NAME)
 
 re: fclean all
