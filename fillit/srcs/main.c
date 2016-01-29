@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 19:59:04 by tm                #+#    #+#             */
-/*   Updated: 2016/01/29 18:55:45 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/29 20:18:47 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int				main(int argc, char **argv)
 	}
 	else
 	{
-		log_error_and_exit("error\n");
+		log_error_and_exit("fillit: missing Tetrimino file input\n");
 	}
 	return (0);
 }
