@@ -52,7 +52,7 @@ static t_bool	check_tetrimino(char *str)
 		i += TT_WIDTH + 1;
 		current_line++;
 	}
-	if ((str[i] != '\n' && str[i] != '\0')|| hash_total != 4)
+	if ((str[i] != '\n' && str[i] != '\0') || hash_total != 4)
 		return (false);
 	return (true);
 }
@@ -71,7 +71,6 @@ t_bool			check_file(char *str, size_t str_length)
 		i = i + TT_LENGTH < str_length ? i + TT_LENGTH : str_length;
 		number_of_tetrominos++;
 	}
-	if (number_of_tetrominos < 1 || number_of_tetrominos > 26)
-		return (false);
-	return (true);
+	return (number_of_tetrominos < 1 || number_of_tetrominos > 26 ||
+		(str[i - 1] == '\n' && str[i - 2] == '\n') ? false : true);
 }
