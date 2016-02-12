@@ -17,7 +17,9 @@ CFLAGS		= -Wall -Wextra -Werror
 HEADERS 	= ./includes/
 SRC			= ./srcs/main.c \
 			  ./srcs/check_file.c \
+			  ./srcs/init_helper.c \
 			  ./srcs/make_tetriminos.c \
+			  ./srcs/trim_tetriminos.c \
 			  ./srcs/trim_tetrimino.c \
 			  ./srcs/del_tetrimino.c \
 			  ./srcs/check_tetriminos.c \

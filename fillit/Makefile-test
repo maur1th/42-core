@@ -1,0 +1,328 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tbouder <tbouder@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2015/12/03 15:48:47 by tbouder           #+#    #+#              #
+#    Updated: 2015/12/18 14:48:31 by tbouder          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME 		= 	fillit
+
+CC			= 	gcc
+CFLAGS		= 	-Wall -Werror -Wextra -g
+
+HEADERS 	= ./includes/
+SRC			= ./srcs/main.c \
+			  ./srcs/check_file.c \
+				./srcs/init_helper.c \
+			  ./srcs/make_tetriminos.c \
+				./srcs/trim_tetriminos.c \
+			  ./srcs/trim_tetrimino.c \
+			  ./srcs/del_tetrimino.c \
+			  ./srcs/check_tetriminos.c \
+			  ./srcs/solver.c \
+			  ./srcs/solver_helper.c
+
+OBJ			=	$(SRC:.c=.o) $(LIB:.c=.o)
+
+
+all: $(NAME)
+
+.SILENT : $(NAME)
+
+$(NAME): $(OBJ)
+	make -C libft/
+	$(CC) -o $@ $^ -L libft/ -lft
+
+%.o: %.c
+	$(CC) -o $@ -c -I $(HEADERS) $(CFLAGS) $<
+
+.SILENT : clean
+clean:
+	rm -f $(OBJ)
+
+.SILENT : fclean
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.SILENT : test
+test: re
+	echo "test1-OK : "
+	./fillit tb/test1-OK
+	echo "\ntest2-OK : "
+	./fillit tb/test2-OK
+	echo "\ntest3-OK : "
+	./fillit tb/test3-OK
+	echo "\ntest4-KO : "
+	./fillit tb/test4-KO
+	echo "\ntest5-OK : "
+	./fillit tb/test5-OK
+	echo "\ntest6-OK : "
+	./fillit tb/test6-OK
+	echo "\ntest7-OK : "
+	./fillit tb/test7-OK
+	echo "\ntest8-OK : "
+	./fillit tb/test8-OK
+	echo "\ntest9-OK : "
+	./fillit tb/test9-OK
+	echo "\ntest10-OK : "
+	./fillit tb/test10-OK
+	echo "\ntestnullsecond : "
+	./fillit tb/testnullsecond || true
+	echo "\ntestNULL : "
+	./fillit tb/testnull || true
+
+.SILENT : testerror
+testerror: re
+	echo "\nN tb (only error) : "
+	cat tb/n0
+	echo "----------"
+	./fillit tb/n0 || true
+	echo ""
+	cat tb/n1
+	echo "----------"
+	./fillit tb/n1 || true
+	echo ""
+	cat tb/n2
+	echo "----------"
+	./fillit tb/n2 || true
+	echo ""
+	cat tb/n3
+	echo "----------"
+	./fillit tb/n3 || true
+	echo ""
+	cat tb/n4
+	echo "----------"
+	./fillit tb/n4 || true
+	echo ""
+	cat tb/n5
+	echo "----------"
+	./fillit tb/n5 || true
+	echo ""
+	cat tb/n6
+	echo "----------"
+	./fillit tb/n6 || true
+	echo ""
+	cat tb/n7
+	echo "----------"
+	./fillit tb/n7 || true
+	echo ""
+	cat tb/n8
+	echo "----------"
+	./fillit tb/n8 || true
+	echo ""
+	cat tb/n9
+	echo "----------"
+	./fillit tb/n9 || true
+	echo ""
+
+	echo "\nA tb (only error) : "
+	cat tb/a0
+	echo "----------"
+	./fillit tb/a0 || true
+	echo ""
+	cat tb/a1
+	echo "----------"
+	./fillit tb/a1 || true
+	echo ""
+	cat tb/a2
+	echo "----------"
+	./fillit tb/a2 || true
+	echo ""
+	cat tb/a3
+	echo "----------"
+	./fillit tb/a3 || true
+	echo ""
+	cat tb/a4
+	echo "----------"
+	./fillit tb/a4 || true
+	echo ""
+	cat tb/a5
+	echo "----------"
+	./fillit tb/a5 || true
+	echo ""
+	cat tb/a6
+	echo "----------"
+	./fillit tb/a6 || true
+	echo ""
+	cat tb/a7
+	echo "----------"
+	./fillit tb/a7 || true
+	echo ""
+	cat tb/a8
+	echo "----------"
+	./fillit tb/a8 || true
+	echo ""
+	cat tb/a9
+	echo "----------"
+	./fillit tb/a9 || true
+	echo ""
+
+.SILENT : testbc
+testbc: re
+	echo "\nB + C tb (only succes 1T) : "
+	cat tb/b0
+	echo "----------"
+	./fillit tb/b0 || true
+	echo "\n"
+	cat tb/b1
+	echo "----------"
+	./fillit tb/b1 || true
+	echo "\n"
+	cat tb/b2
+	echo "----------"
+	./fillit tb/b2 || true
+	echo "\n"
+	cat tb/b3
+	echo "----------"
+	./fillit tb/b3 || true
+	echo "\n"
+	cat tb/b4
+	echo "----------"
+	./fillit tb/b4 || true
+	echo "\n"
+	cat tb/b5
+	echo "----------"
+	./fillit tb/b5 || true
+	echo "\n"
+	cat tb/b6
+	echo "----------"
+	./fillit tb/b6 || true
+	echo "\n"
+	cat tb/b7
+	echo "----------"
+	./fillit tb/b7 || true
+	echo "\n"
+	cat tb/b8
+	echo "----------"
+	./fillit tb/b8 || true
+	echo "\n"
+	cat tb/b9
+	echo "----------"
+	./fillit tb/b9 || true
+	echo "\n"
+	cat tb/c0
+	echo "----------"
+	./fillit tb/c0 || true
+	echo "\n"
+	cat tb/c1
+	echo "----------"
+	./fillit tb/c1 || true
+	echo "\n"
+	cat tb/c2
+	echo "----------"
+	./fillit tb/c2 || true
+	echo "\n"
+	cat tb/c3
+	echo "----------"
+	./fillit tb/c3 || true
+	echo "\n"
+	cat tb/c4
+	echo "----------"
+	./fillit tb/c4 || true
+	echo "\n"
+	cat tb/c5
+	echo "----------"
+	./fillit tb/c5 || true
+	echo "\n"
+	cat tb/c6
+	echo "----------"
+	./fillit tb/c6 || true
+	echo "\n"
+	cat tb/c7
+	echo "----------"
+	./fillit tb/c7 || true
+	echo "\n"
+	cat tb/c8
+	echo "----------"
+	./fillit tb/c8 || true
+	echo "\n"
+	cat tb/c9
+	echo "----------"
+	./fillit tb/c9 || true
+	echo "\n"
+
+.SILENT : testde
+testde: re
+	echo "\nD + E tb (only succes 2T) : "
+	cat tb/d0
+	echo "----------"
+	./fillit tb/d0 || true
+	echo "\n"
+	cat tb/d1
+	echo "----------"
+	./fillit tb/d1 || true
+	echo "\n"
+	cat tb/d2
+	echo "----------"
+	./fillit tb/d2 || true
+	echo "\n"
+	cat tb/d3
+	echo "----------"
+	./fillit tb/d3 || true
+	echo "\n"
+	cat tb/d4
+	echo "----------"
+	./fillit tb/d4 || true
+	echo "\n"
+	cat tb/d5
+	echo "----------"
+	./fillit tb/d5 || true
+	echo "\n"
+	cat tb/d6
+	echo "----------"
+	./fillit tb/d6 || true
+	echo "\n"
+	cat tb/d7
+	echo "----------"
+	./fillit tb/d7 || true
+	echo "\n"
+	cat tb/d8
+	echo "----------"
+	./fillit tb/d8 || true
+	echo "\n"
+	cat tb/d9
+	echo "----------"
+	./fillit tb/d9 || true
+	echo "\n"
+
+
+
+
+.SILENT : testf
+testf: re
+	cat tb/f1
+	echo "----------"
+	./fillit tb/f1 || true
+	echo ""
+
+	cat tb/f2
+	echo "----------"
+	./fillit tb/f2 || true
+	echo ""
+
+	cat tb/f3
+	echo "----------"
+	./fillit tb/f3 || true
+	echo ""
+
+	cat tb/f4
+	echo "----------"
+	./fillit tb/f4 || true
+	echo ""
+
+	cat tb/f5
+	echo "----------"
+	./fillit tb/f5 || true
+	echo ""
+
+	cat tb/f6
+	echo "----------"
+	./fillit tb/f6 || true
+	echo ""
