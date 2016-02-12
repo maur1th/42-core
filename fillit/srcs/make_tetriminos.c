@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft.h>
 #include <fillit.h>
-#include <stdlib.h>
 
 static t_matrix	*make_one(char *str, char letter)
 {
@@ -33,17 +33,7 @@ static t_matrix	*make_one(char *str, char letter)
 			ft_matrixset(tetrimino, row, col, '0');
 		i++;
 	}
-	return (trim_tetrimino(tetrimino));
-}
-
-static t_list	*push_tetrimino(t_list *list, t_matrix *tetrimino)
-{
-	t_list		*node;
-
-	node = ft_lstnew(tetrimino, sizeof(t_matrix));
-	free(tetrimino);
-	ft_lstpush(&list, node);
-	return (list);
+	return (tetrimino);
 }
 
 t_list			*make_tetriminos(char *str, size_t str_length)

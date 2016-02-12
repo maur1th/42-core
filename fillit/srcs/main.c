@@ -42,7 +42,7 @@ static t_list	*init(char *filename)
 	if (!(check_tetriminos(tetrimino_list)))
 		log_error_and_exit("error\n");
 	free(str);
-	return (tetrimino_list);
+	return (trim_tetriminos(tetrimino_list));
 }
 
 int				main(int argc, char **argv)
