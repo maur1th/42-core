@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/25 10:47:17 by tmaurin           #+#    #+#             */
-/*   Updated: 2016/01/27 20:25:03 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/29 15:42:45 by gbienven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 
-typedef int t_bool;
+typedef int			t_bool;
 enum { false, true };
 
 typedef struct	s_list

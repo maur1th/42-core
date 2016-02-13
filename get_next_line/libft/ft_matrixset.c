@@ -17,8 +17,8 @@ t_matrix	*ft_matrixset(t_matrix *matrix, size_t row, size_t col, char value)
 	char	*data;
 
 	if (row * col > (matrix->height - 1) * (matrix->width - 1))
-		return NULL;
+		return (NULL);
 	data = matrix->data;
 	data[col + row * matrix->width] = value;
-	return matrix;
+	return (matrix);
 }

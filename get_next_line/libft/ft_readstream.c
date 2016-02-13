@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/21 19:19:20 by tmaurin           #+#    #+#             */
-/*   Updated: 2016/01/29 18:52:50 by tm               ###   ########.fr       */
+/*   Updated: 2016/01/29 19:31:02 by gbienven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char		*copy_read_data(t_list *list, size_t length_read)
 
 	if (!list)
 		return (NULL);
-	if(!(data = (char*)malloc(sizeof(char) * (length_read + 1))))
+	if (!(data = (char*)malloc(sizeof(char) * (length_read + 1))))
 		return (NULL);
 	ft_bzero(data, length_read + 1);
 	tmp = list;

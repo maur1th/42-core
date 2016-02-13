@@ -12,12 +12,11 @@
 
 #include <libft.h>
 
-t_matrix	*ft_matrixpad(t_matrix *src, size_t height, size_t width)
+t_matrix		*ft_matrixpad(t_matrix *src, size_t height, size_t width)
 {
 	t_matrix	*dst;
-	size_t	row;
-	size_t	col;
-
+	size_t		row;
+	size_t		col;
 
 	if (src->height > height || src->width > width)
 		return (NULL);
