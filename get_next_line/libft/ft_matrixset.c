@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 t_matrix	*ft_matrixset(t_matrix *matrix, size_t row, size_t col, char value)
 {
