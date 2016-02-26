@@ -31,10 +31,16 @@ class Track_Record_Evolution(models.Model):
         return self.ISIN
 
 
-# class Track_Record_Evolution(models.Model):
-#     ISIN = models.ForeignKey(Track_Record_Composition, related_name='ISIN')
-#     date = models.DateField(max_length = 50)
-#     value = models.DecimalField(max_digits=30, decimal_places=25)
+class Analytics(models.Model):
+    ISIN = models.ForeignKey(Track_Record_Composition, related_name='ISIN')
+    period = models.DateField(max_length = 50)
+    date_start = models.DateField()
+    date_end = models.DateField()
+    PL = models.DecimalField(max_digits=30, decimal_places=15)
+    perf = models.DecimalField(max_digits=30, decimal_places=25)
+    perfann = models.DecimalField(max_digits=30, decimal_places=25)
+    vol = models.DecimalField(max_digits=30, decimal_places=25)
+    maxDD = models.DecimalField(max_digits=30, decimal_places=25)
 
-#     def __str__(self):
-#         return self.client
+    def __str__(self):
+        return self.ISIN
