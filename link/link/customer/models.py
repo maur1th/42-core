@@ -28,10 +28,3 @@ class Account(models.Model):
 
     def __str__(self):
         return self.client
-
-# from customer.models import *
-# account = Account.objects.get(id=1)
-# account.finalAmount
-# account.client.prenom
-
-# client.accounts.all()
