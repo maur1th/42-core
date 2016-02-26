@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 
-# Create your models here.
+
 class Client(models.Model):
     lastname = models.CharField(max_length = 50)
     firstname = models.CharField(max_length = 50)
@@ -13,10 +13,11 @@ class Client(models.Model):
     children = models.DecimalField(max_digits=2, decimal_places=0)
     area = models.CharField(max_length = 50)
     profile = models.CharField(max_length = 50)
-    start_date_relation = models.DateField()
+    start_date = models.DateField()
 
     def __str__(self):
-        return "{} {}".format(self.nom, self.prenom)
+        return "{} {}".format(self.lastname, self.firstname)
+
 
 class Account(models.Model):
     client = models.ForeignKey(Client, related_name='accounts')
@@ -27,4 +28,5 @@ class Account(models.Model):
     profile = models.CharField(max_length = 50)
 
     def __str__(self):
-        return self.client
+        return "{} {}: {}".format(
+            self.client.lastname, self.client.firstname, self.id)

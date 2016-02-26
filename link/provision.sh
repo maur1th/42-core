@@ -5,3 +5,4 @@ sudo apt-get install -y git build-essential python3 python3-pip virtualenvwrappe
 su - link
 mkvirtualenv -p /usr/bin/python3 link
 pip install -r requirements.txt
+python manage.py migrate
