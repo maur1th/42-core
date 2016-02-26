@@ -3,9 +3,9 @@ from django.db import models
 from customer.models import *
 from portfolio.models import *
 
-# Create your models here.
-class Products_Table(models.Model):
-    ISIN = models.ForeignKey(Track_Record_Composition, related_name='ISIN')
+class Products(models.Model):
+    ISIN = models.ForeignKey(
+        Track_Record_Composition, related_name='products')
     name = models.DateField(max_length = 50)
     product_type = models.CharField(max_length = 50)
     PEA = models.CharField(max_length = 50)
@@ -22,8 +22,9 @@ class Products_Table(models.Model):
         return self.ISIN
 
 
-class Track_Record_Evolution(models.Model):
-    ISIN = models.ForeignKey(Track_Record_Composition, related_name='ISIN')
+class TrackRecordEvolution(models.Model):
+    ISIN = models.ForeignKey(
+        Track_Record_Composition, related_name='track_record_evolution')
     date = models.DateField(max_length = 50)
     value = models.DecimalField(max_digits=30, decimal_places=25)
 
@@ -32,7 +33,8 @@ class Track_Record_Evolution(models.Model):
 
 
 class Analytics(models.Model):
-    ISIN = models.ForeignKey(Track_Record_Composition, related_name='ISIN')
+    ISIN = models.ForeignKey(
+        Track_Record_Composition, related_name='analytics')
     period = models.DateField(max_length = 50)
     date_start = models.DateField()
     date_end = models.DateField()

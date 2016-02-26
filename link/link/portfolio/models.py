@@ -2,9 +2,9 @@ from __future__ import unicode_literals
 from django.db import models
 from customer.models import *
 
-# Create your models here.
-class Track_Record_Evolution(models.Model):
-    account = models.ForeignKey(Account, related_name='accounts')
+
+class TrackRecordEvolution(models.Model):
+    account = models.ForeignKey(Account, related_name='track_record_evolution')
     date = models.DateField(max_length = 50)
     account_amount = models.DecimalField(max_digits=30, decimal_places=15)
     bench_amount = models.DecimalField(max_digits=30, decimal_places=25)
@@ -16,8 +16,9 @@ class Track_Record_Evolution(models.Model):
         return self.account
 
 
-class Track_Record_Composition(models.Model):
-    account = models.ForeignKey(Account, related_name='accounts')
+class TrackRecordComposition(models.Model):
+    account = models.ForeignKey(
+        Account, related_name = 'track_record_composition')
     date = models.DateField(max_length = 50)
     ISIN = models.CharField(max_length = 50)
     amount = models.DecimalField(max_digits=30, decimal_places=15)
@@ -28,7 +29,7 @@ class Track_Record_Composition(models.Model):
 
 
 class Analytics(models.Model):
-    account = models.ForeignKey(Account, related_name='accounts')
+    account = models.ForeignKey(Account, related_name='analytics')
     period = models.DateField(max_length = 50)
     date_start = models.DateField()
     date_end = models.DateField()
