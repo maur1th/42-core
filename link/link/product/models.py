@@ -19,4 +19,22 @@ class Products_Table(models.Model):
     description = models.CharField(max_length = 300)
 
     def __str__(self):
-        return self.client
+        return self.ISIN
+
+
+class Track_Record_Evolution(models.Model):
+    ISIN = models.ForeignKey(Track_Record_Composition, related_name='ISIN')
+    date = models.DateField(max_length = 50)
+    value = models.DecimalField(max_digits=30, decimal_places=25)
+
+    def __str__(self):
+        return self.ISIN
+
+
+# class Track_Record_Evolution(models.Model):
+#     ISIN = models.ForeignKey(Track_Record_Composition, related_name='ISIN')
+#     date = models.DateField(max_length = 50)
+#     value = models.DecimalField(max_digits=30, decimal_places=25)
+
+#     def __str__(self):
+#         return self.client

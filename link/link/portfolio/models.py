@@ -24,7 +24,7 @@ class Track_Record_Composition(models.Model):
     clientdecided = models.CharField(max_length = 50)
 
     def __str__(self):
-        return self.client
+        return self.account
 
 
 class Analytics(models.Model):
@@ -43,3 +43,6 @@ class Analytics(models.Model):
     bench_perfann = models.DecimalField(max_digits=30, decimal_places=25)
     bench_vol = models.DecimalField(max_digits=30, decimal_places=25)
     bench_maxDD = models.DecimalField(max_digits=30, decimal_places=25)
+
+    def __str__(self):
+        return self.account
