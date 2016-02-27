@@ -6,18 +6,21 @@
 	<li><a href="{% url 'customer:login' %}">Accueil</a></li>
 </ol>
 <div class="row">
-	<div class="col-md-8">
-		<div class="alert alert-warning" role="alert">Attention, nous enregistrons une baisse importante de vos actifs depuis le 31/12/2015.</br></div>
+	<div class="col-md-4">
 		<div class="panel panel-default">
-			<div id="chart1" class="panel-body"></div>
+			<div id="chart5" class="panel-body"></div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div id="chart6" class="panel-body"></div>
 		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-heading text-center"><h3>{{ object.lastname }} {{ object.firstname }}</h3></div>
 			<div class="card-block text-center">
-				<!-- <h4 class="card-title">{{ object.lastname }} {{ object.firstname }}</h4> -->
-				<h5 class="card-text">{{ object.job }} à {{ object.company }}</h5>
+				<h5 class="card-text">{{ object.job }} {% if object.company != "-" %}chez {{ object.company }} {% endif %}</h5>
 			</div>
 			<ul class="list-group list-group-flush">
 			   {% for account in object.accounts.all %}
@@ -39,6 +42,17 @@
 				<!-- <div id="chart2" class="panel-body"></div> -->
 				</li>
 			</ul>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="alert alert-warning" role="alert">Attention, nous enregistrons une baisse importante de vos actifs depuis le 31/12/2015.</br></div>
+		<div class="panel panel-default">
+			<div id="chart1" class="panel-body"></div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div id="chart3" class="panel-body"></div>
 		</div>
 	</div>
 </div>
