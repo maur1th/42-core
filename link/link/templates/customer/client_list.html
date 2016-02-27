@@ -5,13 +5,29 @@
 {# Path #}
 <ol class="breadcrumb">
   <li><a href="{% url 'customer:top' %}">Accueil</a></li>
-  <li class="active">Messages privés</li>
+  <li class="active">Connexion</li>
 </ol>
-<div class="row">
-  {% for client in object_list %}
-    <li>{{ client.firstname }} {{ client.lastname }}</li>
-  {% empty %}
-    <li>No client yet.</li>
-  {% endfor %}
+<div id='login-panel' class="panel panel-default">
+  <div class="panel-body">
+    <form>
+      <div class="form-group">
+        <label for="login">Veuillez choisir un client</label>
+        <select id='login' class="form-control">
+            <option value="null">---</option>
+          {% for client in object_list %}
+            <option value="{{ client.id }}">{{ client.firstname }} {{ client.lastname }}</option>
+          {% empty %}
+            <option>Error: No client</option>
+          {% endfor %}
+        </select>
+      </div>
+    </form>
+  </div>
 </div>
+<script>
+  $('#login').change(function (eventData) {
+    console.log(eventData.target.value);
+    // window.location.href = 'http://stackoverflow.com';
+  });
+</script>
 {% endblock %}
