@@ -13,6 +13,4 @@ urlpatterns = patterns(
         permanent=True)),
     url(r'^customer/', include('customer.urls', namespace='customer')),
     url(r'^api/', include('api.urls', namespace='api')),
-
-    url(r'^admin/', include(admin.site.urls)),
 )
