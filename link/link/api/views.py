@@ -1,9 +1,9 @@
+from rest_framework import viewsets, filters
 from customer.models import Client, Account
-from rest_framework import viewsets
-from .serializers import ClientSerializer, AccountSerializer
+from portfolio.models import Analytics
+from .serializers import ClientSerializer, AccountSerializer,\
+    AnalyticsSerializer
 
-from django.shortcuts import get_object_or_404
-from rest_framework.response import Response
 
 class ClientViewSet(viewsets.ModelViewSet):
     queryset = Client.objects.all()
@@ -13,3 +13,9 @@ class ClientViewSet(viewsets.ModelViewSet):
 class AccountViewSet(viewsets.ModelViewSet):
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
+
+
+class AnalyticsViewSet(viewsets.ModelViewSet):
+    queryset = Analytics.objects.all()
+    serializer_class = AnalyticsSerializer
+    filter_fields = ('account', )
