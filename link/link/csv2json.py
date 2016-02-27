@@ -15,28 +15,29 @@
 # limitations under the License.
 
 import sys
+import csv, codecs, io
 import getopt
-import csv
 from os.path import dirname
 import json
+import re
 
 try:
     script, input_file_name, model_name = sys.argv
 except ValueError:
-    print "\nRun via:\n\n%s input_file_name model_name" % sys.argv[0]
-    print "\ne.g. %s airport.csv app_airport.Airport" % sys.argv[0]
-    print "\nNote: input_file_name should be a path relative to where this script is."
+    print("\nRun via:\n\n%s input_file_name model_name" % sys.argv[0])
+    print("\ne.g. %s airport.csv app_airport.Airport" % sys.argv[0])
+    print("\nNote: input_file_name should be a path relative to where this script is.")
     sys.exit()
 
 in_file = dirname(__file__) + input_file_name
 out_file = dirname(__file__) + input_file_name + ".json"
 
-print "Converting %s from CSV to JSON as %s" % (in_file, out_file)
+print("Converting %s from CSV to JSON as %s" % (in_file, out_file))
 
-f = open(in_file, 'r' )
+f = codecs.open(in_file, 'r', encoding='cp1252' )
 fo = open(out_file, 'w')
 
-reader = csv.reader( f )
+reader = csv.reader( f, delimiter=';' )
 
 header_row = []
 entries = []
@@ -45,16 +46,20 @@ entries = []
 # if model_name == 'app_airport.Airport':
 #     import pdb ; pdb.set_trace( )
 
+def digitize(m):
+    return m.group(1) + m.group(2)
+
 for row in reader:
     if not header_row:
         header_row = row
         continue
 
-    pk = row[0]
+    pk = re.sub('CL(\d\d)Co(\d)', digitize, row[0])
     model = model_name
     fields = {}
     for i in range(len(row)-1):
         active_field = row[i+1]
+        active_field = re.sub('CL(\d\d)Co(\d)', digitize, active_field)
 
         # convert numeric strings into actual numbers by converting to either int or float
         if active_field.isdigit():
