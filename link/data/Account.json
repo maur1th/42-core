@@ -1,0 +1,938 @@
+[
+    {
+        "pk": 11,
+        "fields": {
+            "final_amount": "1430096.00309084",
+            "client": 1,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-08-23",
+            "profile": "Equilibre",
+            "initial_amount": 1300000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 21,
+        "fields": {
+            "final_amount": "4756344.58485318",
+            "client": 2,
+            "account_type": "Compte titres",
+            "initial_date": "2014-06-06",
+            "profile": "Equilibre",
+            "initial_amount": 4865600
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 31,
+        "fields": {
+            "final_amount": "4434009.17376434",
+            "client": 3,
+            "account_type": "Assurance vie",
+            "initial_date": "2011-03-08",
+            "profile": "Dynamique",
+            "initial_amount": 3165400
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 41,
+        "fields": {
+            "final_amount": "2117119.54227736",
+            "client": 4,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-08-01",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 2000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 42,
+        "fields": {
+            "final_amount": "944266.9765398",
+            "client": 4,
+            "account_type": "Compte titres",
+            "initial_date": "2015-07-24",
+            "profile": "Equilibre",
+            "initial_amount": 992400
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 51,
+        "fields": {
+            "final_amount": "851371.311944566",
+            "client": 5,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-03-11",
+            "profile": "Equilibre",
+            "initial_amount": 2509800
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 52,
+        "fields": {
+            "final_amount": "3758864.66083757",
+            "client": 5,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-03-11",
+            "profile": "Equilibre",
+            "initial_amount": 3230700
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 61,
+        "fields": {
+            "final_amount": "2645487.82430485",
+            "client": 6,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-01-12",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 62,
+        "fields": {
+            "final_amount": "5279377.06162301",
+            "client": 6,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-07-25",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 3210400
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 71,
+        "fields": {
+            "final_amount": "3337284.3945834",
+            "client": 7,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-12-18",
+            "profile": "Equilibre",
+            "initial_amount": 1401200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 72,
+        "fields": {
+            "final_amount": "97419.3722179572",
+            "client": 7,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-12-18",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 2823300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 81,
+        "fields": {
+            "final_amount": "1261870.71235692",
+            "client": 8,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-02-01",
+            "profile": "Dynamique",
+            "initial_amount": 1349500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 91,
+        "fields": {
+            "final_amount": "3415885.00994503",
+            "client": 9,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-07-01",
+            "profile": "Equilibre",
+            "initial_amount": 658900
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 101,
+        "fields": {
+            "final_amount": "1827149.77167434",
+            "client": 10,
+            "account_type": "Compte titres",
+            "initial_date": "2013-09-10",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1500000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 102,
+        "fields": {
+            "final_amount": "7059953.3068989",
+            "client": 10,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-08-20",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 795500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 111,
+        "fields": {
+            "final_amount": "3194884.61092064",
+            "client": 11,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-10-19",
+            "profile": "Equilibre",
+            "initial_amount": 3500000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 121,
+        "fields": {
+            "final_amount": "1705899.75382443",
+            "client": 12,
+            "account_type": "PEA",
+            "initial_date": "2013-04-15",
+            "profile": "Dynamique",
+            "initial_amount": 415200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 122,
+        "fields": {
+            "final_amount": "962855.451012103",
+            "client": 12,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-04-15",
+            "profile": "Equilibre",
+            "initial_amount": 3873700
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 131,
+        "fields": {
+            "final_amount": "721796.795118237",
+            "client": 13,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-01-03",
+            "profile": "Equilibre",
+            "initial_amount": 1834000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 132,
+        "fields": {
+            "final_amount": "1556173.06220663",
+            "client": 13,
+            "account_type": "Compte titres",
+            "initial_date": "2012-01-03",
+            "profile": "Dynamique",
+            "initial_amount": 7139100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 141,
+        "fields": {
+            "final_amount": "2015608.84843873",
+            "client": 14,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-09-03",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 720200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 142,
+        "fields": {
+            "final_amount": "5447365.19147129",
+            "client": 14,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-09-03",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 2146500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 151,
+        "fields": {
+            "final_amount": "793397.731159413",
+            "client": 15,
+            "account_type": "Compte titres",
+            "initial_date": "2013-03-15",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 5000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 161,
+        "fields": {
+            "final_amount": "4102215.37323375",
+            "client": 16,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-04-25",
+            "profile": "Dynamique",
+            "initial_amount": 1792100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 162,
+        "fields": {
+            "final_amount": "5079769.41801577",
+            "client": 16,
+            "account_type": "PEA",
+            "initial_date": "2014-07-11",
+            "profile": "Dynamique",
+            "initial_amount": 87900
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 171,
+        "fields": {
+            "final_amount": "455549.354446061",
+            "client": 17,
+            "account_type": "Compte titres",
+            "initial_date": "2014-09-15",
+            "profile": "Dynamique",
+            "initial_amount": 7224700
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 181,
+        "fields": {
+            "final_amount": "4296956.63363557",
+            "client": 18,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-08-12",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 3372100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 182,
+        "fields": {
+            "final_amount": "787015.779215071",
+            "client": 18,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-08-12",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 3186200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 191,
+        "fields": {
+            "final_amount": "2266761.45911662",
+            "client": 19,
+            "account_type": "Compte titres",
+            "initial_date": "2014-06-19",
+            "profile": "Equilibre",
+            "initial_amount": 7423300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 201,
+        "fields": {
+            "final_amount": "10856384.1492289",
+            "client": 20,
+            "account_type": "Assurance vie",
+            "initial_date": "2011-01-28",
+            "profile": "Dynamique",
+            "initial_amount": 1472800
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 202,
+        "fields": {
+            "final_amount": "5445562.94110134",
+            "client": 20,
+            "account_type": "Compte titres",
+            "initial_date": "2014-07-11",
+            "profile": "Dynamique",
+            "initial_amount": 1688300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 211,
+        "fields": {
+            "final_amount": "711550.584882114",
+            "client": 21,
+            "account_type": "Assurance vie",
+            "initial_date": "2011-02-04",
+            "profile": "Equilibre",
+            "initial_amount": 4717600
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 212,
+        "fields": {
+            "final_amount": "533323.157305336",
+            "client": 21,
+            "account_type": "Assurance vie",
+            "initial_date": "2011-02-04",
+            "profile": "Equilibre",
+            "initial_amount": 338600
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 221,
+        "fields": {
+            "final_amount": "2174046.80805501",
+            "client": 22,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-03-16",
+            "profile": "Dynamique",
+            "initial_amount": 4489800
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 222,
+        "fields": {
+            "final_amount": "4832485.32954793",
+            "client": 22,
+            "account_type": "Compte titres",
+            "initial_date": "2012-03-16",
+            "profile": "Dynamique",
+            "initial_amount": 3800900
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 231,
+        "fields": {
+            "final_amount": "5559761.8637494",
+            "client": 23,
+            "account_type": "Assurance vie",
+            "initial_date": "2011-03-17",
+            "profile": "Dynamique",
+            "initial_amount": 7587300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 232,
+        "fields": {
+            "final_amount": "1300422.53713355",
+            "client": 23,
+            "account_type": "Compte titres",
+            "initial_date": "2011-09-21",
+            "profile": "Dynamique",
+            "initial_amount": 3917800
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 241,
+        "fields": {
+            "final_amount": "1824144.4956242",
+            "client": 24,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-08-26",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 4233000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 242,
+        "fields": {
+            "final_amount": "2923102.30213993",
+            "client": 24,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-08-26",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1749200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 243,
+        "fields": {
+            "final_amount": "73853.9497183165",
+            "client": 24,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-08-26",
+            "profile": "Equilibre",
+            "initial_amount": 1236100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 251,
+        "fields": {
+            "final_amount": "78685.8706854766",
+            "client": 25,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-02-14",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 2000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 261,
+        "fields": {
+            "final_amount": "7912690.89235988",
+            "client": 26,
+            "account_type": "PEA",
+            "initial_date": "2012-08-06",
+            "profile": "Dynamique",
+            "initial_amount": 5000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 262,
+        "fields": {
+            "final_amount": "201004.848718211",
+            "client": 26,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-08-06",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 2576600
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 263,
+        "fields": {
+            "final_amount": "2730435.38623917",
+            "client": 26,
+            "account_type": "Compte titres",
+            "initial_date": "2012-08-06",
+            "profile": "Equilibre",
+            "initial_amount": 722500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 271,
+        "fields": {
+            "final_amount": "3393821.25929383",
+            "client": 27,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-01-15",
+            "profile": "Equilibre",
+            "initial_amount": 3542300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 272,
+        "fields": {
+            "final_amount": "3128283.64638428",
+            "client": 27,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-01-15",
+            "profile": "Dynamique",
+            "initial_amount": 5149100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 273,
+        "fields": {
+            "final_amount": "2884185.72189805",
+            "client": 27,
+            "account_type": "PEA",
+            "initial_date": "2014-06-12",
+            "profile": "Dynamique",
+            "initial_amount": 100000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 281,
+        "fields": {
+            "final_amount": "3285208.18894505",
+            "client": 28,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-10-16",
+            "profile": "Dynamique",
+            "initial_amount": 6116200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 282,
+        "fields": {
+            "final_amount": "6933123.89260167",
+            "client": 28,
+            "account_type": "Compte titres",
+            "initial_date": "2014-10-16",
+            "profile": "Dynamique",
+            "initial_amount": 910400
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 283,
+        "fields": {
+            "final_amount": "812114.947517229",
+            "client": 28,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-10-16",
+            "profile": "Equilibre",
+            "initial_amount": 1482600
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 291,
+        "fields": {
+            "final_amount": "6087311.00257445",
+            "client": 29,
+            "account_type": "Assurance vie",
+            "initial_date": "2015-06-12",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 5811000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 301,
+        "fields": {
+            "final_amount": "2119938.97541786",
+            "client": 30,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-05-27",
+            "profile": "Equilibre",
+            "initial_amount": 4847500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 311,
+        "fields": {
+            "final_amount": "1262640.96908394",
+            "client": 31,
+            "account_type": "Compte titres",
+            "initial_date": "2013-09-13",
+            "profile": "Dynamique",
+            "initial_amount": 775300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 312,
+        "fields": {
+            "final_amount": "971159.809961785",
+            "client": 31,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-09-13",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 5297000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 313,
+        "fields": {
+            "final_amount": "5959762.51832287",
+            "client": 31,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-02-12",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 518500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 321,
+        "fields": {
+            "final_amount": "6024187.589168",
+            "client": 32,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-10-13",
+            "profile": "Dynamique",
+            "initial_amount": 4648000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 322,
+        "fields": {
+            "final_amount": "10075315.6724995",
+            "client": 32,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-10-13",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1310100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 331,
+        "fields": {
+            "final_amount": "455307.621572043",
+            "client": 33,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-05-13",
+            "profile": "Equilibre",
+            "initial_amount": 2761600
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 332,
+        "fields": {
+            "final_amount": "3516739.05069758",
+            "client": 33,
+            "account_type": "PEA",
+            "initial_date": "2013-11-01",
+            "profile": "Dynamique",
+            "initial_amount": 198900
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 341,
+        "fields": {
+            "final_amount": "5584903.2319692",
+            "client": 34,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-04-11",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 3162500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 351,
+        "fields": {
+            "final_amount": "4726423.98152506",
+            "client": 35,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-08-17",
+            "profile": "Equilibre",
+            "initial_amount": 5672300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 352,
+        "fields": {
+            "final_amount": "1845220.24070432",
+            "client": 35,
+            "account_type": "Compte titres",
+            "initial_date": "2013-10-02",
+            "profile": "Equilibre",
+            "initial_amount": 847100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 361,
+        "fields": {
+            "final_amount": "10838419.5793862",
+            "client": 36,
+            "account_type": "Compte titres",
+            "initial_date": "2011-06-10",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 8493100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 362,
+        "fields": {
+            "final_amount": "957928.249574966",
+            "client": 36,
+            "account_type": "Compte titres",
+            "initial_date": "2011-08-15",
+            "profile": "Dynamique",
+            "initial_amount": 2000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 363,
+        "fields": {
+            "final_amount": "1067250.80759828",
+            "client": 36,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-08-17",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1663100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 371,
+        "fields": {
+            "final_amount": "5939179.30731075",
+            "client": 37,
+            "account_type": "PEA",
+            "initial_date": "2015-02-04",
+            "profile": "Dynamique",
+            "initial_amount": 1133300
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 372,
+        "fields": {
+            "final_amount": "1942826.64956722",
+            "client": 37,
+            "account_type": "Assurance vie",
+            "initial_date": "2015-02-04",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 2000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 381,
+        "fields": {
+            "final_amount": "4475795.0672277",
+            "client": 38,
+            "account_type": "Assurance vie",
+            "initial_date": "2011-09-07",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1009200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 391,
+        "fields": {
+            "final_amount": "1804077.75210406",
+            "client": 39,
+            "account_type": "Compte titres",
+            "initial_date": "2014-11-14",
+            "profile": "Equilibre",
+            "initial_amount": 1067400
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 392,
+        "fields": {
+            "final_amount": "1253917.28909771",
+            "client": 39,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-11-14",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1500000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 401,
+        "fields": {
+            "final_amount": "1338798.27890059",
+            "client": 40,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-08-24",
+            "profile": "Dynamique",
+            "initial_amount": 752900
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 402,
+        "fields": {
+            "final_amount": "1102779.1306838",
+            "client": 40,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-11-06",
+            "profile": "Equilibre",
+            "initial_amount": 1000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 403,
+        "fields": {
+            "final_amount": "1608501.8491661",
+            "client": 40,
+            "account_type": "PEA",
+            "initial_date": "2012-11-06",
+            "profile": "Dynamique",
+            "initial_amount": 63500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 411,
+        "fields": {
+            "final_amount": "2176313.29355312",
+            "client": 41,
+            "account_type": "Assurance vie",
+            "initial_date": "2014-02-06",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 2675200
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 412,
+        "fields": {
+            "final_amount": "1514134.5072536",
+            "client": 41,
+            "account_type": "Compte titres",
+            "initial_date": "2014-02-06",
+            "profile": "Equilibre",
+            "initial_amount": 3000000
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 421,
+        "fields": {
+            "final_amount": "6152621.13771641",
+            "client": 42,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-03-22",
+            "profile": "Equilibre",
+            "initial_amount": 693100
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 422,
+        "fields": {
+            "final_amount": "978119.26466862",
+            "client": 42,
+            "account_type": "Assurance vie",
+            "initial_date": "2012-03-22",
+            "profile": "Equilibre",
+            "initial_amount": 4743500
+        },
+        "model": "customer.Account"
+    },
+    {
+        "pk": 423,
+        "fields": {
+            "final_amount": "293512.566231827",
+            "client": 42,
+            "account_type": "Assurance vie",
+            "initial_date": "2013-02-05",
+            "profile": "D\u00e9fensif",
+            "initial_amount": 1000000
+        },
+        "model": "customer.Account"
+    }
+]
