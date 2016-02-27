@@ -14,6 +14,7 @@ class ClientViewSet(viewsets.ModelViewSet):
 class AccountViewSet(viewsets.ModelViewSet):
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
+    filter_fields = ('client', )
 
 
 class AnalyticsViewSet(viewsets.ModelViewSet):
