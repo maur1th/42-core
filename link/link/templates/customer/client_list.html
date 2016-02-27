@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock title %}
+{% load static %}
+{% block content %}
+{# Path #}
+<ol class="breadcrumb">
+  <li><a href="{% url 'customer:top' %}">Accueil</a></li>
+  <li class="active">Messages privés</li>
+</ol>
+<div class="row">
+  {% for client in object_list %}
+    <li>{{ client.firstname }} {{ client.lastname }}</li>
+  {% empty %}
+    <li>No client yet.</li>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Link{% endblock %}</title>
+    <meta name="description" content="" />
+    <meta name="author" content="42-Snipers" />
+    {# CSS #}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/link.css' %}" rel="stylesheet">
+    <style type="text/css">
+      /* Span content over screen width */
+      {% if user.fullscreen %}
+      .container {
+          width:98%;
+      }
+      {% endif %}
+    </style>
+    <script type="application/javascript" src="{% static 'js/jquery-2.2.0.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'js/grid.js' %}"></script>
+    {% get_media_prefix as media %}
+  </head>
+  <body>
+    {# Page content #}
+    <div class="container">
+    {% block content %}
+    {% endblock content %}
+    </div>
+    {# Footer #}
+    <br />
+    <footer class="footer text-center">
+      <small>
+      <p>Link, 2016.</p>
+      </small>
+    </footer>
+    <script type="text/javascript">
+      $('[data-toggle="tooltip"]').tooltip({html: true});
+    </script>
+  </body>
+</html>
