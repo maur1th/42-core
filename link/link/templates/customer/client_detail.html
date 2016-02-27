@@ -34,15 +34,22 @@
 							<p class="card-text">{{ object.job }} à {{ object.company }}</p>
 						</div>
 						<ul class="list-group list-group-flush">
+       				   {% for account in object.accounts.all %}
+       				   {% with name="World"}
 							<li class="list-group-item">
-							<p><strong>Type de compte :</strong> Assurance vie</p>
-							<p><strong>Ouverture du compte :</strong> 23/08/2013</p>
-							<p><strong>Montant initial :</strong> 1300000</p>
-							<p><strong>Montant final :</strong> 1430096.00309084   <span class="label label-warning">Attention</span></p>
+							<p><strong>Type de compte :</strong> {{ account.account_type }}</p>
+							<p><strong>Ouverture du compte :</strong> {{ account.initial_date }}</p>
+							<p><strong>Montant initial :</strong> {{ account.initial_amount | floatformat:"2" }}</p>
+							<p><strong>Montant final :</strong> {{ account.final_amount | floatformat:"2" }}
+							<p><strong>Différence :</strong> {{ account.initial_amount |add:"account.final_amount"}}
+							{% if account.initial_amount > account.final_amount %}<span class="label label-danger">Warning</span></p>
+							{% elif account.initial_amount < account.final_amount %}<span class="label label-success">Success</span></p>{% endif %}
+
 							</li>
 							<li class="list-group-item">
 							<a class="btn btn-default btn-circle"><div class="round_percent">+5%</div></a>
-
+						{% endwith %}
+   				       {% endfor %}
 							<!-- <div id="chart2" class="panel-body"></div> -->
 							</li>
 						</ul>
