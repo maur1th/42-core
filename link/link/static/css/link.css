@@ -8,7 +8,7 @@ body {
     margin-bottom: 60px;
 }
 .container {
-  padding: 20px
+  padding: 0px
 }
 .footer {
     position: absolute;
@@ -19,4 +19,17 @@ body {
 }
 #login-panel {
   margin: 15% 5%
+}
+.btn-circle {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.42;
+    border-radius: 40px;
+}
+.round_percent {
+    position: relative;
+    top:35%;
 }
