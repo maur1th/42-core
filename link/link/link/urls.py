@@ -12,10 +12,7 @@ urlpatterns = patterns(
     url(r'^$', RedirectView.as_view(url=reverse_lazy('customer:top'),
         permanent=True)),
     url(r'^customer/', include('customer.urls', namespace='customer')),
-    # url(r'^product/', include('product.urls', namespace='product')),
-    # url(r'^portfolio/', include('portfolio.urls', namespace='portfolio')),
-    # url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-    #     {'document_root': settings.MEDIA_ROOT}),
+    url(r'^api/', include('api.urls', namespace='api')),
 
     url(r'^admin/', include(admin.site.urls)),
 )
