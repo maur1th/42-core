@@ -8,6 +8,11 @@ urlpatterns = patterns(
     url(
         regex=r'^$',
         view=views.LoginView.as_view(),
-        name='top'
+        name='login'
     ),
+    url(
+        regex=r'^(?P<pk>[\d]+)/$',
+        view=views.ClientView.as_view(),
+        name='top'
+    )
 )
