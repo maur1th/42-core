@@ -5,6 +5,7 @@ from customer.models import *
 
 class TrackRecordEvolution(models.Model):
     account = models.ForeignKey(Account, related_name='track_record_evolution')
+    accountid = models.CharField(max_length = 50)
     date = models.DateField(max_length = 50)
     account_amount = models.DecimalField(max_digits=30, decimal_places=15)
     bench_amount = models.DecimalField(max_digits=30, decimal_places=25)
@@ -19,6 +20,7 @@ class TrackRecordEvolution(models.Model):
 class TrackRecordComposition(models.Model):
     account = models.ForeignKey(
         Account, related_name = 'track_record_composition')
+    accountid = models.CharField(max_length = 50)
     date = models.DateField(max_length = 50)
     ISIN = models.CharField(max_length = 50)
     amount = models.DecimalField(max_digits=30, decimal_places=15)
@@ -30,6 +32,7 @@ class TrackRecordComposition(models.Model):
 
 class Analytics(models.Model):
     account = models.ForeignKey(Account, related_name='analytics')
+    accountid = models.CharField(max_length = 50)
     period = models.DateField(max_length = 50)
     date_start = models.DateField()
     date_end = models.DateField()

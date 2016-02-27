@@ -21,7 +21,8 @@ class Client(models.Model):
 
 class Account(models.Model):
     client = models.ForeignKey(Client, related_name='accounts')
-    initial_date = models.DateField(max_length = 50)
+    accountid = models.CharField(max_length = 50)
+    initial_date = models.DateField()
     initial_amount = models.DecimalField(max_digits=30, decimal_places=15)
     final_amount = models.DecimalField(max_digits=30, decimal_places=15)
     account_type = models.CharField(max_length = 50)
