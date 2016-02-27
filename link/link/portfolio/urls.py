@@ -6,8 +6,8 @@ from . import views
 urlpatterns = patterns(
     '',
     url(
-        regex=r'^$',
-        view=views.Login.as_view(),
+        regex=r'^(?P<id>[\d]+)/$',
+        view=views.Portfolio.as_view(),
         name='top'
     ),
 )
