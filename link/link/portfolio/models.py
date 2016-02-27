@@ -1,11 +1,22 @@
 from __future__ import unicode_literals
 from django.db import models
-from customer.models import *
+from customer.models import Account
+
+
+class TrackRecordComposition(models.Model):
+    account = models.ForeignKey(
+        Account, related_name = 'track_record_composition')
+    date = models.DateField(max_length = 50)
+    isin = models.CharField(max_length = 50)
+    amount = models.DecimalField(max_digits=30, decimal_places=15)
+    clientdecided = models.CharField(max_length = 50)
+
+    def __str__(self):
+        return self.account
 
 
 class TrackRecordEvolution(models.Model):
     account = models.ForeignKey(Account, related_name='track_record_evolution')
-    accountid = models.CharField(max_length = 50)
     date = models.DateField(max_length = 50)
     account_amount = models.DecimalField(max_digits=30, decimal_places=15)
     bench_amount = models.DecimalField(max_digits=30, decimal_places=25)
@@ -17,22 +28,8 @@ class TrackRecordEvolution(models.Model):
         return self.account
 
 
-class TrackRecordComposition(models.Model):
-    account = models.ForeignKey(
-        Account, related_name = 'track_record_composition')
-    accountid = models.CharField(max_length = 50)
-    date = models.DateField(max_length = 50)
-    ISIN = models.CharField(max_length = 50)
-    amount = models.DecimalField(max_digits=30, decimal_places=15)
-    clientdecided = models.CharField(max_length = 50)
-
-    def __str__(self):
-        return self.account
-
-
 class Analytics(models.Model):
     account = models.ForeignKey(Account, related_name='analytics')
-    accountid = models.CharField(max_length = 50)
     period = models.DateField(max_length = 50)
     date_start = models.DateField()
     date_end = models.DateField()
