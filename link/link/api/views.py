@@ -9,6 +9,12 @@ from .serializers import ClientSerializer, AccountSerializer, \
 
 
 # Filters
+class AnalyticsFilter(django_filters.FilterSet):
+    class Meta:
+        model = Analytics
+        fields = ['account']
+        order_by = ['period']
+
 class EvolutionFilter(django_filters.FilterSet):
     min_date = django_filters.DateTimeFilter(name="date", lookup_type="gte")
     max_date = django_filters.DateTimeFilter(name="date", lookup_type="lte")
@@ -33,7 +39,7 @@ class AccountViewSet(viewsets.ModelViewSet):
 class AnalyticsViewSet(viewsets.ModelViewSet):
     queryset = Analytics.objects.all()
     serializer_class = AnalyticsSerializer
-    filter_fields = ('account', )
+    filter_class = AnalyticsFilter
 
 
 class CompositionViewSet(viewsets.ModelViewSet):
