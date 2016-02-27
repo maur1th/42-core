@@ -7,9 +7,17 @@
 </ol>
 <div class="row">
 	<div class="col-md-8">
+
+<!-- 	<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</div> -->
 		{% for account in object.accounts.all %}
 			{% if account.initial_amount > account.final_amount %}
-			<div class="alert alert-warning" role="alert">Nous enregistrons une baisse de la valorisation de votre {{ account.account_type }} ouvert le {{ account.initial_date|date:"SHORT_DATE_FORMAT" }}</br></div>
+			<div class="alert alert-warning alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<p>Nous enregistrons une baisse de la valorisation de votre {{ account.account_type }} ouvert le {{ account.initial_date|date:"SHORT_DATE_FORMAT" }}</p>
+			</div>
 			{% endif %}
 		{% endfor %}
 		<div class="col-md-6">
