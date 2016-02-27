@@ -13,7 +13,7 @@ urlpatterns = patterns(
         permanent=True)),
     url(r'^customer/', include('customer.urls', namespace='customer')),
     # url(r'^product/', include('product.urls', namespace='product')),
-    url(r'^portfolio/', include('portfolio.urls', namespace='portfolio')),
+    # url(r'^portfolio/', include('portfolio.urls', namespace='portfolio')),
     # url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
     #     {'document_root': settings.MEDIA_ROOT}),
 

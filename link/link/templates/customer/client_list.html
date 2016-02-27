@@ -2,9 +2,8 @@
 {% block title %}Login{% endblock title %}
 {% load static %}
 {% block content %}
-{# Path #}
 <ol class="breadcrumb">
-  <li><a href="{% url 'customer:top' %}">Accueil</a></li>
+  <li><a href="{% url 'customer:login' %}">Accueil</a></li>
   <li class="active">Connexion</li>
 </ol>
 <div id='login-panel' class="panel panel-default">
@@ -12,7 +11,7 @@
     <form>
       <div class="form-group">
         <label for="login">Veuillez choisir un client</label>
-        <select id='login' class="form-control">
+        <select id="login" class="form-control">
             <option value="null">---</option>
           {% for client in object_list %}
             <option value="{{ client.id }}">{{ client.firstname }} {{ client.lastname }}</option>
@@ -26,8 +25,10 @@
 </div>
 <script>
   $('#login').change(function (eventData) {
-    console.log(eventData.target.value);
-    // window.location.href = 'http://stackoverflow.com';
+    if (eventData.target.value !== 'null') {
+      window.location.href = "{% url 'customer:login' %}" +
+        eventData.target.value;
+    }
   });
 </script>
 {% endblock %}

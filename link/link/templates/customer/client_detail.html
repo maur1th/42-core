@@ -2,66 +2,50 @@
 {% load static %}
 
 {% block content %}
-	<body>
-		<nav class="navbar navbar-static-top navbar-inverse bg-inverse">
-			<a class="navbar-brand" href="#">{{ object.lastname }} {{ object.firstname }}</a>
-<!-- 			<ul class="nav navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">About</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Contact</a>
-			</li>
-			</ul> -->
-		</nav>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-					<div class="alert alert-warning" role="alert">Attention, nous enregistrons une baisse importante de vos actifs depuis le 31/12/2015.</br></div>
-					<div class="panel panel-default">
-						<div id="chart1" class="panel-body"></div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="panel panel-default">
-						<div class="panel-heading text-center"><h3>Profile</h3></div>
-						<div class="card-block text-center">
-							<h4 class="card-title">{{ object.lastname }} {{ object.firstname }}</h4>
-							<p class="card-text">{{ object.job }} à {{ object.company }}</p>
-						</div>
-						<ul class="list-group list-group-flush">
-       				   {% for account in object.accounts.all %}
-       				   {% with name="World"}
-							<li class="list-group-item">
-							<p><strong>Type de compte :</strong> {{ account.account_type }}</p>
-							<p><strong>Ouverture du compte :</strong> {{ account.initial_date }}</p>
-							<p><strong>Montant initial :</strong> {{ account.initial_amount | floatformat:"2" }}</p>
-							<p><strong>Montant final :</strong> {{ account.final_amount | floatformat:"2" }}
-							<p><strong>Différence :</strong> {{ account.initial_amount |add:"account.final_amount"}}
-							{% if account.initial_amount > account.final_amount %}<span class="label label-danger">Warning</span></p>
-							{% elif account.initial_amount < account.final_amount %}<span class="label label-success">Success</span></p>{% endif %}
-
-							</li>
-							<li class="list-group-item">
-							<a class="btn btn-default btn-circle"><div class="round_percent">+5%</div></a>
-						{% endwith %}
-   				       {% endfor %}
-							<!-- <div id="chart2" class="panel-body"></div> -->
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+<ol class="breadcrumb">
+	<li><a href="{% url 'customer:login' %}">Accueil</a></li>
+</ol>
+<div class="row">
+	<div class="col-md-8">
+		<div class="alert alert-warning" role="alert">Attention, nous enregistrons une baisse importante de vos actifs depuis le 31/12/2015.</br></div>
+		<div class="panel panel-default">
+			<div id="chart1" class="panel-body"></div>
 		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading text-center"><h3>{{ object.lastname }} {{ object.firstname }}</h3></div>
+			<div class="card-block text-center">
+				<!-- <h4 class="card-title">{{ object.lastname }} {{ object.firstname }}</h4> -->
+				<h5 class="card-text">{{ object.job }} à {{ object.company }}</h5>
+			</div>
+			<ul class="list-group list-group-flush">
+			   {% for account in object.accounts.all %}
+				<li class="list-group-item">
+				<p><strong>Type de compte :</strong> {{ account.account_type }}</p>
+				<p><strong>Ouverture du compte :</strong> {{ account.initial_date|date:"SHORT_DATE_FORMAT" }}</p>
+				<p><strong>Montant initial :</strong> {{ account.initial_amount | floatformat:"2" }}</p>
+				<p><strong>Montant final :</strong> {{ account.final_amount | floatformat:"2" }}
+				{% if account.initial_amount > account.final_amount %}<span class="label label-danger">Warning</span></p>
+				{% elif account.initial_amount < account.final_amount %}<span class="label label-success">Success</span></p>{% endif %}
+
+				   {% for evolution in account.evolution.all %}
+				   <!-- {{evolution.date|date:"SHORT_DATE_FORMAT"}} -->
+				   {% if evolution.date|date:"SHORT_DATE_FORMAT"  == "02/09/2016" %}
+						<a class="btn btn-default btn-circle"><div class="round_percent">{{ evolution.account_perfdaily | floatformat:"4"}}</div></a>
+				   {% endif %}
+			       {% endfor %}
+		       {% endfor %}
+				<!-- <div id="chart2" class="panel-body"></div> -->
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
 {% endblock %}
 {% block script_foot %}
-		<script type="text/javascript" src="{% static 'js/datas.js' %}"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-		<script src="{% static 'bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/datas.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="{% static 'bootstrap.min.js' %}"></script>
 {% endblock %}
-
