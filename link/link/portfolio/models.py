@@ -32,6 +32,7 @@ class Evolution(models.Model):
     def __str__(self):
         return self.account
 
+
 class Analytics(models.Model):
     account = models.ForeignKey(
         Account,

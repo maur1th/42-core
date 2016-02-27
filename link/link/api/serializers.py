@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from customer.models import Client, Account
-from portfolio.models import Analytics, Composition
+from portfolio.models import Analytics, Composition, Evolution
 from product.models import Product
 
 
@@ -22,6 +22,11 @@ class AnalyticsSerializer(serializers.ModelSerializer):
 class CompositionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Composition
+
+
+class EvolutionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Evolution
 
 
 class ProductSerializer(serializers.ModelSerializer):
