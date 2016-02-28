@@ -1,8 +1,10 @@
 #!/bin/sh
+echo Provisioning...
 sudo locale-gen en_US.UTF-8
-# sudo apt-get update
-# sudo apt-get -y upgrade
-sudo apt-get install -y git build-essential python3 python3-pip virtualenvwrapper nginx postgresql postgresql-server-dev-9.3 memcached libmemcached-dev python-imaging nginx supervisor libjpeg-dev libtiff5-dev libfreetype6-dev liblcms2-dev libwebp-dev
+apt-get update
+apt-get upgrade -y
+apt-get install -y git build-essential python3 python3-pip virtualenvwrapper nginx postgresql postgresql-server-dev-9.3 memcached libmemcached-dev python-imaging nginx supervisor libjpeg-dev libtiff5-dev libfreetype6-dev liblcms2-dev libwebp-dev
+echo Setting up database...
 sudo -u postgres psql << EOF
 CREATE DATABASE linkdb;
 CREATE USER link WITH PASSWORD 'link';
