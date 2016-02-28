@@ -29,6 +29,7 @@ class CompositionFilter(django_filters.FilterSet):
     class Meta:
         model = Composition
         fields = ['account', 'date', 'min_date', 'max_date']
+        order_by = ['date']
 
 # ViewSets
 class ClientViewSet(viewsets.ModelViewSet):
