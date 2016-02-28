@@ -5,6 +5,16 @@
 <ol class="breadcrumb">
 	<li><a href="{% url 'customer:login' %}">Accueil</a></li>
 </ol>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div id="chart7" class="panel-body"></div>
+		</div>
+	</div>
+</div>
+
+
 <div class="row">
 	<div class="col-md-8">
 
@@ -53,12 +63,12 @@
 					{% if account.initial_amount > account.final_amount %}<span class="label label-danger">Warning</span></p>
 					{% elif account.initial_amount < account.final_amount %}<span class="label label-success">Success</span></p>{% endif %}
 
-					   {% for evolution in account.evolution.all %}
+					   <!-- {% for evolution in account.evolution.all %} -->
 					   <!-- {{evolution.date|date:"SHORT_DATE_FORMAT"}} -->
-					   {% if evolution.date|date:"SHORT_DATE_FORMAT"  == "02/09/2016" %}
-							<a class="btn btn-default btn-circle"><div class="round_percent">{{ evolution.account_perfdaily | floatformat:"4"}}</div></a>
-					   {% endif %}
-				       {% endfor %}
+					   <!-- {% if evolution.date|date:"SHORT_DATE_FORMAT"  == "02/09/2016" %} -->
+							<!-- <a class="btn btn-default btn-circle"><div class="round_percent">{{ evolution.account_perfdaily | floatformat:"4"}}</div></a> -->
+					   <!-- {% endif %} -->
+				       <!-- {% endfor %} -->
 			       {% endfor %}
 					<!-- <div id="chart2" class="panel-body"></div> -->
 					</li>
