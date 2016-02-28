@@ -8,9 +8,9 @@ jQuery(function ($) {
   var data2 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
   var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
   var data4 = [10, 20, 30, 40, 50];
-  var data5 = [1];
+  var data5 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
 
-  var data6 = [3, 9, 12, 14, 18, 32];
+  var data6 = [7, 55, 45, 67, 12, 45, 32, 22, 12, 12, 9, 3];
   var data7 = [3, 7, 10, 13, 16, 37];
   var data8 = [3, 5, 11, 10, 43, 16];
   var data9 = [3+3+3, 9+7+5, 10+11+12, 14+13+10, 18+16+43, 32+37+16];
@@ -75,7 +75,7 @@ jQuery(function ($) {
         print: false
       },
       primaryHeader: {
-        text: 'Variation trimestrielle des comptes',
+        text: 'Variation des comptes sur un trimestre',
         align: 'center'
       },
       seriesSettings: {
@@ -87,23 +87,30 @@ jQuery(function ($) {
     });
   };
 
-  function drawChart3(series) {
-    $('#chart3').shieldChart({
+  function drawChart3(dates, series) {
+    $('#chart5').shieldChart({
       exportOptions: {
         image: false,
         print: false
       },
       primaryHeader: {
-        text: 'Part des produits dans le portefeuille',
+        text: 'Comparaison compte/benchmark',
         align: 'center'
       },
+      axisX: {
+        categoricalValues: dates
+      },
+      // axisX: {
+      //   categoricalValues: ['1', '2', '3', '4', today]
+      // },
       dataSeries: series
-    });
+    })
   };
 
   $.get('/api/accounts/?client=' + clientid, function (accounts) {
-    var j = 0;
+    var j = 1;
     var dates_1 = [];
+    var data3 = [];
     var series_1 = [];
     var dataSeries_1 = [];
     var dates_2 = [];
@@ -139,15 +146,15 @@ jQuery(function ($) {
           });
         }
       }).done(function () {
-        drawChart1(dates_1, dataSeries_1);
+        drawChart3(dates_1, dataSeries_1);
       });
 
-      $.get('/api/composition/?account=' + account.id +'&min_date=2016-01-01', function (res)
+      $.get('/api/composition/?account=' + account.id +'&min_date=2015-12-01', function (res)
       {
         var serie = [];
         res.results.forEach(function (composition, i)
         {
-          if (i < 60)
+          if (i < 90)
           {
             serie.push(parseInt(composition.amount));
             dates_2.push(composition.date.toString());
@@ -170,70 +177,71 @@ jQuery(function ($) {
         drawChart2(dates_2, dataSeries_2);
       });
 
-      $.get('/api/composition/?account=' + account.id, function (res)
+      $.get('/api/analytics/?account=' + account.id, function (res)
       {
         var serie = [];
-        var i = 0;
-        res.results.forEach(function (composition, i)
+        var serie2 = [];
+        res.results.forEach(function (analytics)
         {
-          if (i === 0)
+          if (analytics.period !== 'Global')
           {
-            serie.push(parseInt(composition.product));
+            serie.push(parseInt(analytics.bench_PL));
+            serie2.push(parseInt(analytics.account_PL));
+            dates_3.push(analytics.period);
           }
-          i++;
         });
-        // console.log(serie);
-
-        if (j === accounts.count - 1)
-        {
-          series_3.push(serie);
-          console.log(series_3);
-        }
-        j++;
-
+        series_3.push(serie);
+        data3.push(serie2);
         if (series_3.length === accounts.count)
         {
+          data3.forEach(function (serie)
+          {
+            dataSeries_3.push({
+              seriesType: 'line',
+              collectionAlias: account.account_type,
+              data: serie,
+            });
+          });
           series_3.forEach(function (serie)
           {
             dataSeries_3.push({
-              seriesType: 'donut',
+              seriesType: 'stepline',
+              collectionAlias: 'Benchmark',
               data: serie,
             });
           });
         }
       }).done(function () {
-        drawChart3(dataSeries_3);
+        drawChart1(dates_3, dataSeries_3);
       });
 
     });
-  });
 
-  $(function () {
-    $('.links a').shieldTooltip();
-    $('#chart5').shieldChart({
-      exportOptions: {
-        image: false,
-        print: false
-      },
-      primaryHeader: {
-        text: 'Assurance Vie',
-        align: 'center'
-      },
-      axisY: {
-        title: {
-          text: 'Break-Down for selected quarter'
-        },
-      },
-      axisX: {
-        categoricalValues: ['1', '2', '3', '4', today]
-      },
-      dataSeries: [{
-        seriesType: 'line',
-        data: data1,
-        collectionAlias: 'P&L'
-        // color: 'red'
-      }]
-    });
+  // $(function () {
+  //   $('#chart5').shieldChart({
+  //     exportOptions: {
+  //       image: false,
+  //       print: false
+  //     },
+  //     primaryHeader: {
+  //       text: 'Assurance Vie',
+  //       align: 'center'
+  //     },
+  //     axisY: {
+  //       title: {
+  //         text: 'Break-Down for selected quarter'
+  //       },
+  //     },
+  //     axisX: {
+  //       categoricalValues: ['1', '2', '3', '4', today]
+  //     },
+  //     dataSeries: [{
+  //       seriesType: 'line',
+  //       data: data1,
+  //       collectionAlias: 'P&L'
+  //       // color: 'red'
+  //     }]
+  //   });
     // $('#chart4').shieldChart({
     //  exportOptions: {
     //    image: false,
@@ -248,20 +256,25 @@ jQuery(function ($) {
     //  }]
     // });
 
-    // $('#chart3').shieldChart({
-    //   exportOptions: {
-    //     image: false,
-    //     print: false
-    //   },
-    //   primaryHeader: {
-    //     text: 'Part des produits dans le portefeuille',
-    //     align: 'center'
-    //   },
-    //   dataSeries: [{
-    //     seriesType: 'donut',
-    //     data: data4
-    //   }]
-    // });
+    $('#chart3').shieldChart({
+      exportOptions: {
+        image: false,
+        print: false
+      },
+      seriesSettings: {
+          donut: {
+              enablePointSelection: true
+          }
+      },
+      primaryHeader: {
+        text: 'Part des produits dans le portefeuille',
+        align: 'center'
+      },
+      dataSeries: [{
+        seriesType: 'donut',
+        data: data4
+      }]
+    });
 
     // $('#chart5').shieldChart({
     //   exportOptions: {
@@ -285,8 +298,11 @@ jQuery(function ($) {
         print: false
       },
       dataSeries: [{
-        seriesType: 'donut',
+        seriesType: 'polararea',
         data: data5
+      }, {
+        seriesType: 'polararea',
+        data: data6,
       }]
     });
   });
