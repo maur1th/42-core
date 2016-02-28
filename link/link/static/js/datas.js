@@ -87,13 +87,31 @@ jQuery(function ($) {
     });
   };
 
+  function drawChart3(series) {
+    $('#chart3').shieldChart({
+      exportOptions: {
+        image: false,
+        print: false
+      },
+      primaryHeader: {
+        text: 'Part des produits dans le portefeuille',
+        align: 'center'
+      },
+      dataSeries: series
+    });
+  };
+
   $.get('/api/accounts/?client=' + clientid, function (accounts) {
+    var j = 0;
     var dates_1 = [];
     var series_1 = [];
     var dataSeries_1 = [];
     var dates_2 = [];
     var series_2 = [];
     var dataSeries_2 = [];
+    var dates_3 = [];
+    var series_3 = [];
+    var dataSeries_3 = [];
     accounts.results.forEach(function (account)
     {
       $.get('/api/analytics/?account=' + account.id, function (res)
@@ -152,6 +170,41 @@ jQuery(function ($) {
         drawChart2(dates_2, dataSeries_2);
       });
 
+      $.get('/api/composition/?account=' + account.id, function (res)
+      {
+        var serie = [];
+        var i = 0;
+        res.results.forEach(function (composition, i)
+        {
+          if (i === 0)
+          {
+            serie.push(parseInt(composition.product));
+          }
+          i++;
+        });
+        // console.log(serie);
+
+        if (j === accounts.count - 1)
+        {
+          series_3.push(serie);
+          console.log(series_3);
+        }
+        j++;
+
+        if (series_3.length === accounts.count)
+        {
+          series_3.forEach(function (serie)
+          {
+            dataSeries_3.push({
+              seriesType: 'donut',
+              data: serie,
+            });
+          });
+        }
+      }).done(function () {
+        drawChart3(dataSeries_3);
+      });
+
     });
   });
 
@@ -195,20 +248,20 @@ jQuery(function ($) {
     //  }]
     // });
 
-    $('#chart3').shieldChart({
-      exportOptions: {
-        image: false,
-        print: false
-      },
-      primaryHeader: {
-        text: 'Part des produits dans le portefeuille',
-        align: 'center'
-      },
-      dataSeries: [{
-        seriesType: 'donut',
-        data: data4
-      }]
-    });
+    // $('#chart3').shieldChart({
+    //   exportOptions: {
+    //     image: false,
+    //     print: false
+    //   },
+    //   primaryHeader: {
+    //     text: 'Part des produits dans le portefeuille',
+    //     align: 'center'
+    //   },
+    //   dataSeries: [{
+    //     seriesType: 'donut',
+    //     data: data4
+    //   }]
+    // });
 
     // $('#chart5').shieldChart({
     //   exportOptions: {
