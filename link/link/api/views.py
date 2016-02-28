@@ -23,6 +23,12 @@ class EvolutionFilter(django_filters.FilterSet):
         model = Evolution
         fields = ['account', 'date', 'min_date', 'max_date']
 
+class CompositionFilter(django_filters.FilterSet):
+    min_date = django_filters.DateTimeFilter(name="date", lookup_type="gte")
+    max_date = django_filters.DateTimeFilter(name="date", lookup_type="lte")
+    class Meta:
+        model = Composition
+        fields = ['account', 'date', 'min_date', 'max_date']
 
 # ViewSets
 class ClientViewSet(viewsets.ModelViewSet):
@@ -46,6 +52,7 @@ class CompositionViewSet(viewsets.ModelViewSet):
     queryset = Composition.objects.all()
     serializer_class = CompositionSerializer
     filter_fields = ('account', 'date', )
+    filter_class = CompositionFilter
 
 
 class EvolutionViewSet(viewsets.ModelViewSet):

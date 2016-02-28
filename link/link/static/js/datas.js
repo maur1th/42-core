@@ -9,16 +9,56 @@ jQuery(function ($) {
   var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
   var data4 = [10, 20, 30, 40, 50];
   var data5 = [1];
-  var data6 = [87, 100 - 87];
 
-  function drawChart(dates, series) {
+  var data6 = [3, 9, 12, 14, 18, 32];
+  var data7 = [3, 7, 10, 13, 16, 37];
+  var data8 = [3, 5, 11, 10, 43, 16];
+  var data9 = [3+3+3, 9+7+5, 10+11+12, 14+13+10, 18+16+43, 32+37+16];
+  var data10 = [3, 3, 9, 14, 11, 12];
+  var data11 = [3, 6, 17, 17, 20, 22];
+  var data12 = [3, 1, 13, 20, 45, 20];
+  var data13 = [3+3+3, 10, 9+17+13, 14+17+20, 11+20+45, 12+22+20];
+
+/*
+{
+       seriesType: 'area',
+       data: data7,
+       collectionAlias: 'Compte 1',
+     }, {
+       seriesType: 'area',
+       data: data8,
+       collectionAlias: 'Compte 2',
+     }, {
+       seriesType: 'area',
+       data: data6,
+       collectionAlias: 'Compte 3',
+     }, {
+       seriesType: 'line',
+       data: data11,
+       collectionAlias: 'Benchmark Compte 1',
+       color: 'blue'
+     }, {
+       seriesType: 'line',
+       data: data12,
+       collectionAlias: 'Benchmark Compte 2',
+       color: 'orange'
+     }, {
+       seriesType: 'line',
+       data: data10,
+       collectionAlias: 'Benchmark Compte 3',
+       color: 'red'
+     }
+*/
+
+
+  function drawChart1(dates, series) {
     $('#chart1').shieldChart({
       exportOptions: {
         image: false,
         print: false
       },
       primaryHeader: {
-        text: 'Variation journalière',
+        text: 'Variation annuelle des comptes',
         align: 'center'
       },
       axisX: {
@@ -28,23 +68,52 @@ jQuery(function ($) {
     });
   };
 
+  function drawChart2(dates, series) {
+    $('#chart7').shieldChart({
+      exportOptions: {
+        image: false,
+        print: false
+      },
+      primaryHeader: {
+        text: 'Variation trimestrielle des comptes',
+        align: 'center'
+      },
+      seriesSettings: {
+          area: {
+              stackMode: "normal"
+          }
+      },
+      dataSeries: series
+    });
+  };
+
   $.get('/api/accounts/?client=' + clientid, function (accounts) {
-    var dates = [];
-    var series = [];
-    var dataSeries = [];
-    accounts.results.forEach(function (account) {
-      $.get('/api/analytics/?account=' + account.id, function (res) {
+    var dates_1 = [];
+    var series_1 = [];
+    var dataSeries_1 = [];
+    var dates_2 = [];
+    var series_2 = [];
+    var dataSeries_2 = [];
+    accounts.results.forEach(function (account)
+    {
+      $.get('/api/analytics/?account=' + account.id, function (res)
+      {
         var serie = [];
-        res.results.forEach(function (analytics) {
-          if (analytics.period !== 'Global') {
+        res.results.forEach(function (analytics)
+        {
+          if (analytics.period !== 'Global')
+          {
             serie.push(parseInt(analytics.account_PL));
-            dates.push(analytics.period);
+            dates_1.push(analytics.period);
           }
         });
-        series.push(serie);
-        if (series.length === accounts.count) {
-          series.forEach(function (serie) {
-            dataSeries.push({
+        series_1.push(serie);
+        if (series_1.length === accounts.count)
+        {
+          series_1.forEach(function (serie)
+          {
+            console.log(account.account_type);
+            dataSeries_1.push({
               seriesType: 'line',
               data: serie,
               collectionAlias: account.account_type
@@ -52,39 +121,39 @@ jQuery(function ($) {
           });
         }
       }).done(function () {
-        drawChart(dates, dataSeries);
+        drawChart1(dates_1, dataSeries_1);
       });
+
+      $.get('/api/composition/?account=' + account.id +'&min_date=2016-01-01', function (res)
+      {
+        var serie = [];
+        res.results.forEach(function (composition, i)
+        {
+          if (i < 60)
+          {
+            serie.push(parseInt(composition.amount));
+            dates_2.push(composition.date.toString());
+          }
+          i++;
+        });
+        series_2.push(serie);
+        if (series_2.length === accounts.count)
+        {
+          series_2.forEach(function (serie)
+          {
+            dataSeries_2.push({
+              seriesType: 'area',
+              data: serie,
+              collectionAlias: account.account_type
+            });
+          });
+        }
+      }).done(function () {
+        drawChart2(dates_2, dataSeries_2);
+      });
+
     });
   });
-
-  // $.get('/api/accounts/?client=' + clientid, function (accounts) {
-  //   var dates = [];
-  //   var series = [];
-  //   var dataSeries = [];
-  //   accounts.results.forEach(function (account) {
-  //     $.get('/api/analytics/?account=' + account.id, function (res) {
-  //       var serie = [];
-  //       res.results.forEach(function (analytics) {
-  //         if (analytics.period !== 'Global') {
-  //           serie.push(parseInt(analytics.account_PL));
-  //           dates.push(analytics.period);
-  //         }
-  //       });
-  //       series.push(serie);
-  //     }).done(function () {
-  //       series.forEach(function (serie) {
-  //         dataSeries.push({
-  //           seriesType: 'line',
-  //           data: serie,
-  //           collectionAlias: account.account_type
-  //         });
-  //       });
-  //       console.log(JSON.stringify(dataSeries));
-  //       drawChart(dates, dataSeries);
-  //     });
-  //   });
-  // });
-
 
   $(function () {
     $('.links a').shieldTooltip();
@@ -140,17 +209,6 @@ jQuery(function ($) {
         data: data4
       }]
     });
-
-    // $('#chart2').shieldChart({
-    //  exportOptions: {
-    //    image: false,
-    //    print: false
-    //  },
-    //  dataSeries: [{
-    //    seriesType: 'donut',
-    //    data: data5
-    //  }]
-    // });
 
     // $('#chart5').shieldChart({
     //   exportOptions: {
