@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/20 19:41:34 by tm               ###   ########.fr       */
+/*   Updated: 2016/03/20 21:36:04 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int				get_next_line(int const fd, char **line)
 	char		*tmp;
 	static char	*str = NULL;
 
-	free(*line);
 	if (str == NULL && (str = str_init(fd)) == NULL)
 		return (-1);
 	if ((str = read_to_str(fd, str)) == NULL)
@@ -70,7 +69,7 @@ int				get_next_line(int const fd, char **line)
 	{
 		*line = str;
 		str = NULL;
-		return (ft_strcmp("", *line) ? 1 : 0);
+		return (ft_strlen(*line) == 0 ? 0 : 1);
 	}
 	*line = ft_strsub(str, 0, newline - str);
 	tmp = str;
