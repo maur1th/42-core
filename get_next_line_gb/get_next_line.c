@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Genevieve <Genevieve@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/19 15:48:01 by Genevieve        ###   ########.fr       */
+/*   Updated: 2016/03/20 19:41:34 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,17 @@ char			*str_init(int const fd)
 {
 	int		ret;
 	char		*buf;
-	char *str;
 
-	buf = ft_strnew(BUFF_SIZE);
+	if ((buf = ft_strnew(BUFF_SIZE)) == NULL)
+		return (NULL);
 	ret = read(fd, buf, BUFF_SIZE);
 	if (ret < 0)
+	{
+		free(buf);
 		return (NULL);
+	}
 	buf[ret] = '\0';
-	str = (char*)malloc(sizeof(char) * (ret + 1));
-	if (str == NULL)
-		return (NULL);
-	str[ret] = '\0';
-	str = ft_strcpy(str, buf);
-	free(buf);
-	return (str);
+	return (buf);
 }
 
 char			*read_to_str(int const fd, char *str)
@@ -39,12 +36,18 @@ char			*read_to_str(int const fd, char *str)
 
 	while (!(ft_strchr(str, '\n')))
 	{
-		buf = ft_strnew(BUFF_SIZE);
+		if ((buf = ft_strnew(BUFF_SIZE)) == NULL)
+			return (NULL);
 		ret = read(fd, buf, BUFF_SIZE);
 		if (ret < 0)
+		{
+			free(buf);
 			return (NULL);
-		if (ret == 0)
+		}
+		if (ret == 0) {
+			free(buf);
 			return (str);
+		}
 		buf[ret] = '\0';
 		str = ft_strjoin(str, buf);
 		free(buf);
@@ -55,20 +58,23 @@ char			*read_to_str(int const fd, char *str)
 int				get_next_line(int const fd, char **line)
 {
 	char		*newline;
+	char		*tmp;
 	static char	*str = NULL;
 
+	free(*line);
 	if (str == NULL && (str = str_init(fd)) == NULL)
 		return (-1);
 	if ((str = read_to_str(fd, str)) == NULL)
 		return (-1);
-	newline = ft_strchr(str, '\n');
-	if (newline == NULL)
+	if ((newline = ft_strchr(str, '\n')) == NULL)
 	{
-		*line = ft_strdup(str);
+		*line = str;
 		str = NULL;
 		return (ft_strcmp("", *line) ? 1 : 0);
 	}
 	*line = ft_strsub(str, 0, newline - str);
-	str = ft_strsub(str, (newline - str) + 1, ft_strlen(str));
+	tmp = str;
+	str = ft_strsub(tmp, (newline - tmp) + 1, ft_strlen(tmp));
+	free(tmp);
 	return (1);
 }
