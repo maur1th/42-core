@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/20 21:36:04 by tm               ###   ########.fr       */
+/*   Updated: 2016/03/20 21:42:42 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ char			*read_to_str(int const fd, char *str)
 			free(buf);
 			return (NULL);
 		}
-		if (ret == 0) {
+		if (ret == 0)
+		{
 			free(buf);
 			return (str);
 		}
