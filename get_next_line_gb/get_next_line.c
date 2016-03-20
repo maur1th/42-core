@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/20 21:44:14 by tm               ###   ########.fr       */
+/*   Updated: 2016/03/20 22:47:02 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,7 @@ char			*str_init(int const fd)
 	if ((buf = ft_strnew(BUFF_SIZE)) == NULL)
 		return (NULL);
 	ret = read(fd, buf, BUFF_SIZE);
-	if (ret < 0)
-	{
-		free(buf);
-		return (NULL);
-	}
-	return (buf);
+	return (ret < 0 ? NULL : buf);
 }
 
 char			*read_to_str(int const fd, char *str)
@@ -33,25 +28,17 @@ char			*read_to_str(int const fd, char *str)
 	int		ret;
 	char		*buf;
 
-	while (!(ft_strchr(str, '\n')))
+	ret = 1;
+	while (!(ft_strchr(str, '\n')) && ret > 0)
 	{
 		if ((buf = ft_strnew(BUFF_SIZE)) == NULL)
 			return (NULL);
 		ret = read(fd, buf, BUFF_SIZE);
-		if (ret < 0)
-		{
-			free(buf);
+		if (!(str = ft_strjoin(str, buf)))
 			return (NULL);
-		}
-		if (ret == 0)
-		{
-			free(buf);
-			return (str);
-		}
-		str = ft_strjoin(str, buf);
 		free(buf);
 	}
-	return (str);
+	return (ret < 0 ? NULL : str);
 }
 
 int				get_next_line(int const fd, char **line)
