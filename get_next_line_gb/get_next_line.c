@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/20 21:42:42 by tm               ###   ########.fr       */
+/*   Updated: 2016/03/20 21:44:14 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char			*str_init(int const fd)
 		free(buf);
 		return (NULL);
 	}
-	buf[ret] = '\0';
 	return (buf);
 }
 
@@ -49,7 +48,6 @@ char			*read_to_str(int const fd, char *str)
 			free(buf);
 			return (str);
 		}
-		buf[ret] = '\0';
 		str = ft_strjoin(str, buf);
 		free(buf);
 	}
