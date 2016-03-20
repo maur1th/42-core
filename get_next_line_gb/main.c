@@ -6,11 +6,12 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/20 19:31:08 by tm               ###   ########.fr       */
+/*   Updated: 2016/03/20 20:07:24 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+# include <fcntl.h>
 #include <stdio.h>
 
 int			main(int argc, char **argv)

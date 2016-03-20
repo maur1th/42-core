@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbienven <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 18:30:48 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/17 18:33:27 by gbienven         ###   ########.fr       */
+/*   Updated: 2016/03/20 20:07:14 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # define BUFF_SIZE 100
 
 # include <unistd.h>
-# include <fcntl.h>
 # include <stdlib.h>
 # include "libft/includes/libft.h"
 
