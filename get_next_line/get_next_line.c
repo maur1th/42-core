@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/22 00:03:33 by tm               ###   ########.fr       */
+/*   Created: 2016/03/18 15:21:58 by tmaurin           #+#    #+#             */
+/*   Updated: 2016/03/22 00:26:36 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char			*read_to_str(int const fd, char *str)
 {
 	int		ret;
 	char	*buf;
+	char	*tmp;
 
 	ret = 1;
 	while (!(ft_strchr(str, '\n')) && ret > 0)
@@ -23,8 +24,10 @@ char			*read_to_str(int const fd, char *str)
 		if ((buf = ft_strnew(BUFF_SIZE)) == NULL)
 			return (NULL);
 		ret = read(fd, buf, BUFF_SIZE);
-		if (!(str = ft_strjoin(str, buf)))
+		tmp = str;
+		if (!(str = ft_strjoin(tmp, buf)))
 			return (NULL);
+		free(tmp);
 		free(buf);
 	}
 	return (ret < 0 ? NULL : str);

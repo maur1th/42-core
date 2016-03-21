@@ -6,7 +6,7 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/20 20:07:24 by tm               ###   ########.fr       */
+/*   Updated: 2016/03/22 00:24:51 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int			main(int argc, char **argv)
 		if (fd < 0)
 			fd = 0;
 		while ((i = get_next_line(fd, &line) > 0))
+		{
 			printf("{%d}\t[%s]\n", i, line);
+			free(line);
+		}
 		free(line);
 	}
 	return (0);
