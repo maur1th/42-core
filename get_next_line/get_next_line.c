@@ -5,61 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 01:20:09 by tm                #+#    #+#             */
-/*   Updated: 2016/01/27 18:05:10 by tm               ###   ########.fr       */
+/*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
+/*   Updated: 2016/03/22 00:03:33 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "libft/libft.h"
 #include "get_next_line.h"
 
-static char		*copy_read_data(char *data, t_list *list, size_t length)
+char			*read_to_str(int const fd, char *str)
 {
-	size_t		i;
-	size_t		j;
-	t_list		*tmp;
+	int		ret;
+	char	*buf;
 
-	i = 0;
-	j = 0;
-	while (list != NULL)
+	ret = 1;
+	while (!(ft_strchr(str, '\n')) && ret > 0)
 	{
-		while (i < list->content_size)
-		{
-			data[i + j] = ((char*)list->content)[i];
-			i += 1;
-		}
-		j += i;
-		i = 0;
-		tmp = list;
-		list = list->next;
-		free(tmp->content);
-		free(tmp);
+		if ((buf = ft_strnew(BUFF_SIZE)) == NULL)
+			return (NULL);
+		ret = read(fd, buf, BUFF_SIZE);
+		if (!(str = ft_strjoin(str, buf)))
+			return (NULL);
+		free(buf);
 	}
-	data[length] = '\0';
-	return (data);
+	return (ret < 0 ? NULL : str);
 }
 
 int				get_next_line(int const fd, char **line)
 {
-	char			*data;
-	t_list			*list;
-	char			*buf;
-	size_t			ret;
-	size_t			length_read;
+	char		*newline;
+	char		*tmp;
+	static char	*str = NULL;
 
-	list = NULL;
-	length_read = 0;
-	if (!(buf = (char*)malloc(sizeof(char) * (BUFF_SIZE + 1))))
+	if ((str = read_to_str(fd, str)) == NULL)
 		return (-1);
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	if ((newline = ft_strchr(str, '\n')) == NULL)
 	{
-		length_read += ret;
-		ft_lstpush(&list, ft_lstnew(buf, ret));
+		*line = str;
+		str = NULL;
+		return (ft_strlen(*line) == 0 ? 0 : 1);
 	}
-	if (!(data = (char*)malloc(sizeof(char) * length_read + 1)))
-		return (-1);
-	// return (copy_read_data(data, list, length_read));
+	*line = ft_strsub(str, 0, newline - str);
+	tmp = str;
+	str = ft_strsub(tmp, (newline - tmp) + 1, ft_strlen(tmp));
+	free(tmp);
 	return (1);
 }
