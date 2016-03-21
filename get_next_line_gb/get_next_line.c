@@ -6,27 +6,16 @@
 /*   By: tm <tm@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/18 15:21:58 by gbienven          #+#    #+#             */
-/*   Updated: 2016/03/20 22:47:02 by tm               ###   ########.fr       */
+/*   Updated: 2016/03/22 00:03:33 by tm               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char			*str_init(int const fd)
-{
-	int		ret;
-	char		*buf;
-
-	if ((buf = ft_strnew(BUFF_SIZE)) == NULL)
-		return (NULL);
-	ret = read(fd, buf, BUFF_SIZE);
-	return (ret < 0 ? NULL : buf);
-}
-
 char			*read_to_str(int const fd, char *str)
 {
 	int		ret;
-	char		*buf;
+	char	*buf;
 
 	ret = 1;
 	while (!(ft_strchr(str, '\n')) && ret > 0)
@@ -47,8 +36,6 @@ int				get_next_line(int const fd, char **line)
 	char		*tmp;
 	static char	*str = NULL;
 
-	if (str == NULL && (str = str_init(fd)) == NULL)
-		return (-1);
 	if ((str = read_to_str(fd, str)) == NULL)
 		return (-1);
 	if ((newline = ft_strchr(str, '\n')) == NULL)
